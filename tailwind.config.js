@@ -2,14 +2,20 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     fontFamily: {
-      'Roboto': ['Roboto', 'sans-serif']
+      'Roboto': ['Roboto', 'sans-serif'],
+      'AvenirNext': ['Avenir Next', 'sans-serif']
     },  
     extend: {
       colors: {
         'headerBg': 'rgba(32, 39, 48, 0.7);',
         'aboutMeBg': '#202730',
         'screenBorderBottom': 'rgba(32, 39, 48, 0.7);',
-        'imgZelimBorderBottom': 'rgba(14, 14, 14, 0.9);'
+        'imgZelimBorderBottom': 'rgba(14, 14, 14, 0.9);',
+        'productBg': 'rgba(180, 179, 179, 0.15);',
+        'flatsAddressBg': 'rgba(0, 0, 0, 0.5);',
+        'QuotesBg': '#202730',
+        'bullets': '#284264',
+        'formCoating': 'rgba(248, 245, 245, 0.88);'
       },
       maxWidth :{
         'mobileContainer': "480px",
@@ -29,6 +35,8 @@ module.exports = {
       backgroundImage: {
         'screenImage': "url('../src/components/pages/main/screen/image/screen-image.jpg')",
         'aboutMeImage': "url('../src/components/pages/main/aboutMe/svg/svg-stripes.svg')",
+        'quotesMeImage': "url('../src/components/pages/main/quotes/svg/svg-stripes.svg')",
+        'formImage': "url('../src/components/pages/main/form/img/formBg.png')"
       }, 
       spacing: {
         '297': '297px',

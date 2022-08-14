@@ -3,6 +3,9 @@ import Header from "./header/Header";
 import MobileMenu from "./mobileMenu/MobileMenu";
 import AboutMe from "./pages/main/aboutMe/AboutMe";
 import Screen from "./pages/main/screen/Screen";
+import Products from "./pages/flats/products/Products";
+import Quotes from "./pages/main/quotes/Quotes";
+import Form from "./pages/main/form/Form";
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   return (
@@ -13,6 +16,9 @@ const App = () => {
       </Screen>
 
       <AboutMe />
+      <Products/>
+      <Quotes/>
+      <Form/>
     </>
   );
 };
