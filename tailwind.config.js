@@ -15,7 +15,11 @@ module.exports = {
         'flatsAddressBg': 'rgba(0, 0, 0, 0.5);',
         'QuotesBg': '#202730',
         'bullets': '#284264',
-        'formCoating': 'rgba(248, 245, 245, 0.88);'
+        'formCoating': 'rgba(248, 245, 245, 0.88);',
+        'inputFormBorderColor': '#797878',
+        'formTextColor': '#474747',
+        'formBtnColor': '#1B1A1A'
+        
       },
       maxWidth :{
         'mobileContainer': "480px",
