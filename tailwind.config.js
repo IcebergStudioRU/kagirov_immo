@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'Roboto': ['Roboto', 'sans-serif'],
-      'AvenirNext': ['Avenir Next', 'sans-serif']
+      'Montserrat': ['Montserrat', 'sans-serif']
     },  
     extend: {
       colors: {

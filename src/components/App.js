@@ -7,6 +7,7 @@ import Products from "./pages/flats/products/Products";
 import Quotes from "./pages/main/quotes/Quotes";
 import Form from "./pages/main/form/Form";
 import WhyUs from "./pages/main/whyUs/WhyUs";
+import Footer from "./footer/Footer";
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Quotes/>
       <Form/>
       <WhyUs/>
+      <Footer/>
     </>
   );
 };

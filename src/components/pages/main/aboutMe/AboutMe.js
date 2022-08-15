@@ -9,10 +9,10 @@ const AboutMe = () => {
             </div>
             <div className='w-100% h-4 bg-imgZelimBorderBottom absolute bottom-0 top-297'></div>
             <div className='p-4 flex flex-col items-center  '>
-                <h1 className='text-white mb-6 text-2xl font-AvenirNext'>About Me</h1>
-                <p className='text-center text-white font-AvenirNext mb-4'>Lorem ipsum dolor sit amet, consectetur<br/> adipiscing elit. Suspendisse varius enim in eros<br/> elementum tristique. </p>
+                <h1 className='text-white mb-6 text-2xl font-Montserrat'>About Me</h1>
+                <p className='text-center text-white font-Montserrat mb-4'>Lorem ipsum dolor sit amet, consectetur<br/> adipiscing elit. Suspendisse varius enim in eros<br/> elementum tristique. </p>
 
-<p className='text-center text-white font-AvenirNext'>Duis cursus, mi quis viverra ornare, eros dolor<br/> interdum nulla, ut commodo diam libero vitae<br/> erat. Aenean faucibus nibh et justo cursus id<br/> rutrum lorem imperdiet</p>
+<p className='text-center text-white font-Montserrat'>Duis cursus, mi quis viverra ornare, eros dolor<br/> interdum nulla, ut commodo diam libero vitae<br/> erat. Aenean faucibus nibh et justo cursus id<br/> rutrum lorem imperdiet</p>
             </div>
         </div>
     );
