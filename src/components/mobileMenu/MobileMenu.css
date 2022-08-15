@@ -9,6 +9,7 @@
   position: fixed;
   right: 0;
   z-index: 12;
+  bottom: -88px;
 }
 .mobileMenu_closed {
   transform: translateX(100%);
