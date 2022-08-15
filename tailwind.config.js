@@ -40,10 +40,14 @@ module.exports = {
         'screenImage': "url('../src/components/pages/main/screen/image/screen-image.jpg')",
         'aboutMeImage': "url('../src/components/pages/main/aboutMe/svg/svg-stripes.svg')",
         'quotesMeImage': "url('../src/components/pages/main/quotes/svg/svg-stripes.svg')",
-        'formImage': "url('../src/components/pages/main/form/img/formBg.png')"
+        'formImage': "url('../src/components/pages/main/form/img/formBg.png')",
+        'whyUsImage': "url('../src/components/pages/main/whyUs/img/WhyUsBg.jpg')"
       }, 
       spacing: {
         '297': '297px',
+      },
+      boxShadow: {
+        'numShadow': '2px 0 #3A4D5A, -2px 0 #3A4D5A, 0 2px #3A4D5A, 0 -2px #3A4D5A, 1px 1px #3A4D5A, -1px -1px #3A4D5A, 1px -1px #3A4D5A, -1px 1px #3A4D5A;'
       }
       
     },
