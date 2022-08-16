@@ -5,7 +5,7 @@ const AboutMe = () => {
         <div className="bg-aboutMeBg w-1/1 relative " >
 
             <div className='flex justify-center border-b-8-black mb-4 bg-aboutMeImage bg-no-repeat bg-cover'>
-                <img src={Zelimhan}/>
+                <img src={Zelimhan} alt="makler"/>
             </div>
             <div className='w-100% h-4 bg-imgZelimBorderBottom absolute bottom-0 top-297'></div>
             <div className='p-4 flex flex-col items-center  '>

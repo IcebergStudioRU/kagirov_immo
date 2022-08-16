@@ -26,7 +26,7 @@ const Form = () => {
                             <Email className='absolute top-8 left-4 box-border'/>
                         </label>
                         <div>
-                            <button className='df w-32 h-10 bg-formBtnColor rounded text-white shadow-xl font-Montserrat text-xl'>
+                            <button className='w-32 h-10 bg-formBtnColor rounded text-white shadow-xl font-Montserrat text-xl'>
                                 Contact Us!
                             </button>
                         </div>

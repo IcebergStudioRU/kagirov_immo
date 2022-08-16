@@ -1,10 +1,12 @@
 .headerDefault{
     background-color: rgba(32, 39, 48, 0.7);
     width: 100%;
+    transition: 1s;
 }
 .headerFixed{
-    background-color: rgba(32, 39, 48, 0.7);
+    background-color: rgba(22, 26, 32, 0.950);
     position: fixed;
     width: 100%;
     z-index: 12;
+    transition: 1s;
 }
