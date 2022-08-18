@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { ReactComponent as Bed } from "./svg/bed.svg";
 import { ReactComponent as Door } from "./svg/door.svg";
 import { ReactComponent as Bath } from "./svg/bath.svg";
@@ -30,7 +31,7 @@ const FlatPreview = ({flat}) => {
                         </div>
                     </div>
                     <div className="absolute bottom-0">
-                      <button className="w-60 h-63 bg-seeMoreBg text-formTextColor font-semibold font-Montserrat text-xl">See more</button>
+                      <Link className="w-60 h-63 bg-seeMoreBg text-formTextColor font-semibold font-Montserrat text-xl" to="/flat">See more</Link>
                     </div>
                   </div>
                 </div>
