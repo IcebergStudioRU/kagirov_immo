@@ -8,7 +8,7 @@ import Quotes from "./quotes/Quotes";
 import Screen from "./screen/Screen";
 import WhyUs from "./whyUs/WhyUs";
 import FlatsPreview from "./flatsPreview/FlatsPreview";
-const Main = ({ mobileMenu, setMobileMenu }) => {
+const Main = ({ mobileMenu, setMobileMenu, setFlat }) => {
   return (
     <>
       <Screen>
@@ -17,7 +17,7 @@ const Main = ({ mobileMenu, setMobileMenu }) => {
       </Screen>
       <AboutMe />
       <Quotes />
-      <FlatsPreview/>
+      <FlatsPreview setFlat={setFlat} />
       <Form />
       <WhyUs />
       <Footer />

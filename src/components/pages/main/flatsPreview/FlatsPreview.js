@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getFlats } from "../../../../utils/firebase";
 import FlatPreview from "../../../flatPreview/FlatPreview";
 import { ReactComponent as ViewAll } from "./svg/viewAllicon.svg";
-const FlatsPreview = () => {
+const FlatsPreview = ({ setFlat }) => {
   const [flats, setFlats] = useState([]);
   const [slice, setSlice] = useState(3);
 
@@ -18,8 +18,8 @@ const FlatsPreview = () => {
         setSlice(3);
       }
     });
-    };
-    
+  };
+
   const ViewHideAll = () => {
     if (slice === 3) {
       return (
@@ -49,7 +49,7 @@ const FlatsPreview = () => {
         <ul className="flex flex-col items-center mb-12">
           {flats.slice(0, slice).map((flat) => (
             <li className="card mb-10 w-60 h-309 last:mb-0">
-              <FlatPreview flat={flat} />
+              <FlatPreview flat={flat} setFlat={setFlat} />
             </li>
           ))}
         </ul>

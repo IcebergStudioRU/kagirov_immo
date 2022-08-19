@@ -4,16 +4,21 @@ import Flat from "./pages/flat/Flat";
 import Main from "./pages/main/Main";
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [flat, setFlat] = useState({})
   return (
     <>
       <Routes>
         <Route
-          path="/kagirov_immo"
+          path="/"
           element={
-            <Main mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
+            <Main
+              mobileMenu={mobileMenu}
+              setMobileMenu={setMobileMenu}
+              setFlat={setFlat}
+            />
           }
         />
-        <Route path="/kagirov_immo/flat" element={<Flat/>}/>
+        <Route path="/flat" element={<Flat flat={flat} />} />
       </Routes>
     </>
   );

@@ -31,16 +31,21 @@ module.exports = {
         desktopContainer: "1200px",
       },
       height: {
+        "100%": "100%",
         420: "420px",
         600: "600px",
         27: "27px",
-        "100%": "100%",
         309: "309px",
+        300: "300px",
         391: "391px",
-        63: "63px"
+        63: "63px",
+        380: "380px"
       },
       width: {
         "100%": "100%",
+        250: '250px',
+        300: '300px',
+        380: "380px"
       },
       backgroundImage: {
         screenImage:
