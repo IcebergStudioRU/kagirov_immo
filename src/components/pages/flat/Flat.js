@@ -1,37 +1,27 @@
 import React from "react";
-import Slider from "react-slick";
 const Flat = ({ flat }) => {
-  const settings = {
-    customPaging: function (i) {
-      return (
-        <a>
-          <img src={flat.images[i]} />
-        </a>
-      );
-    },
-    dots: true,
-    dotsClass: "slick-dots slick-thumb",
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
   return (
     <>
+      <div className="max-w-mobileContainer mx-auto p-5 flex justify-center">
+          <div className="w-160 h-215 relative flex items-center justify-center">
+            <div className="absolute flex w-800 left-160">
+              <div className="bg-red-500 w-160 h-215 ">
 
-      <div className="max-w-mobileContainer mx-auto p-5 flex flex-col items-center">
-      <p className="text-formTextColor font-Montserrat text-xl text-center mb-12">
-              {flat.address}
-      </p>
-        <div className="w-250 h-300">
-          <Slider {...settings}>
-            {flat.images.map((image) => (
-              
-                <img src={image}  className="w-250 h-380 object-cover mb-3"  />
-              
-            ))}
-          </Slider>
-        </div>
+              </div>
+              <div className="bg-blue-500 w-160 h-215 ">
+
+              </div>
+              <div className="bg-green-500 w-160 h-215 ">
+
+              </div>
+              <div className="bg-orange-500 w-160 h-215 ">
+
+              </div>
+              <div className="bg-purple-500 w-160 h-215 ">
+
+              </div>
+            </div>
+          </div>
       </div>
     </>
   );

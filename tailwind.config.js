@@ -39,13 +39,18 @@ module.exports = {
         300: "300px",
         391: "391px",
         63: "63px",
-        380: "380px"
+        380: "380px",
+        215: "215px",
+       
       },
       width: {
         "100%": "100%",
         250: '250px',
         300: '300px',
-        380: "380px"
+        380: "380px",
+        160: "160px",
+        480: "480px",
+        '60%': '60%'
       },
       backgroundImage: {
         screenImage:
@@ -66,6 +71,8 @@ module.exports = {
         297: "297px",
         250: "50px",
         245: "245px",
+        160: "160px",
+        320: "320px"
       },
       boxShadow: {
         numShadow:
