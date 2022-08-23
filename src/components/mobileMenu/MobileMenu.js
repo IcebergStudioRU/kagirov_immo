@@ -5,8 +5,10 @@ import "./MobileMenu.css";
 const MobileMenu = ({ mobileMenu, setMobileMenu }) => {
   return (
     <div className={mobileMenu ? "mobileMenu_opened" : "mobileMenu_closed"}>
-      <div className="max-w-mobileContainer mx-auto pt-32 pb-10 px-5 ">
-        <HamBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
+      <div className="max-w-mobileContainer mx-auto p-5 ">
+        <div className="hamMobMenu flex flex-col items-end mb-28">
+          <HamBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}/>
+        </div>
         <div className="flex flex-col items-center">
           <p className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1">
             About Me

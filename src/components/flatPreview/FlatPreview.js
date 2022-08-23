@@ -31,19 +31,19 @@ const FlatPreview = ({ flat, setFlat }) => {
             <div className="flex justify-center p-5">
               <div className="flex flex-col items-center mr-4">
                 <Bed className="mb-1" />
-                <p className="text-white font-Montserrat text-xs">
-                  {flat.bed}bed
+                <p className="text-white font-Montserrat text-xs font-medium">
+                  {flat.bed} bed
                 </p>
               </div>
               <div className="flex flex-col items-center mr-4">
                 <Door className="mb-1" />
-                <p className="text-white font-Montserrat text-xs">
+                <p className="text-white font-Montserrat text-xs font-medium">
                   {flat.rooms} rooms
                 </p>
               </div>
               <div className="flex flex-col items-center ">
                 <Bath className="mb-1" />
-                <p className="text-white font-Montserrat text-xs">
+                <p className="text-white font-Montserrat text-xs font-medium">
                   {flat.bath} bath
                 </p>
               </div>
