@@ -41,6 +41,7 @@ module.exports = {
         63: "63px",
         380: "380px",
         215: "215px",
+        412: "412px"
        
       },
       width: {
@@ -71,8 +72,8 @@ module.exports = {
         297: "297px",
         250: "50px",
         245: "245px",
-        160: "160px",
-        320: "320px"
+        'm160': "-160px",
+        'm320': "-320px"
       },
       boxShadow: {
         numShadow:

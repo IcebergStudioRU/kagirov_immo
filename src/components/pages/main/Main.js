@@ -11,9 +11,12 @@ import FlatsPreview from "./flatsPreview/FlatsPreview";
 const Main = ({ mobileMenu, setMobileMenu, setFlat }) => {
   return (
     <>
-      <Screen>
+      <Screen mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}>
         <Header mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-        <MobileMenu mobileMenu={mobileMenu} />
+        <MobileMenu
+          mobileMenu={mobileMenu}
+          setMobileMenu={setMobileMenu}
+        />
       </Screen>
       <AboutMe />
       <Quotes />
