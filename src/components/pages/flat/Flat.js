@@ -19,7 +19,7 @@ const Flat = ({ flat }) => {
       return;
     }
     if (touch > untouch) {
-      if (touch - untouch < 20) {
+      if (touch - untouch < 30) {
         return;
       } else if (flat.images.length - 1 > imageNumber) {
         setImageNumber((prev) => {
@@ -30,7 +30,7 @@ const Flat = ({ flat }) => {
       }
     }
     if (touch < untouch) {
-      if (touch - untouch > -20) {
+      if (touch - untouch > -30) {
         return;
       } else if (0 < imageNumber) {
         setImageNumber((prev) => {
