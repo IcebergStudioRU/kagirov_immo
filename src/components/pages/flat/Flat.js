@@ -4,6 +4,7 @@ import { ReactComponent as Door } from "./svg/door.svg";
 import { ReactComponent as Bath } from "./svg/bath.svg";
 import Footer from "../../footer/Footer";
 import { Link } from "react-router-dom";
+
 const Flat = ({ flat }) => {
   const [imageNumber, setImageNumber] = useState(0);
   const [touch, setTouch] = useState(0);
@@ -18,16 +19,20 @@ const Flat = ({ flat }) => {
       return;
     }
     if (touch > untouch) {
-      if (flat.images.length - 1 > imageNumber) {
+      if (touch - untouch < 20) {
+        return;
+      } else if (flat.images.length - 1 > imageNumber) {
         setImageNumber((prev) => {
           return prev + 1;
         });
       } else {
-        setImageNumber(0)
+        setImageNumber(0);
       }
     }
     if (touch < untouch) {
-      if (0 < imageNumber) {
+      if (touch - untouch > -20) {
+        return;
+      } else if (0 < imageNumber) {
         setImageNumber((prev) => {
           return prev - 1;
         });
@@ -35,20 +40,20 @@ const Flat = ({ flat }) => {
         setImageNumber(flat.images.length - 1);
       }
     }
-
     setTouch(0);
     setUntouch(0);
-    console.log(touch, untouch);
   };
 
-  const test = (e) => {
+  const touchStart = (e) => {
     const x1 = Math.round(e.touches[0].clientX);
     setTouch(x1);
+    console.log(x1);
   };
 
-  const test2 = (e) => {
+  const touchMove = (e) => {
     const x2 = Math.round(e.touches[0].clientX);
     setUntouch(x2);
+    console.log(x2);
   };
 
   return (
@@ -72,8 +77,8 @@ const Flat = ({ flat }) => {
                 className="absolute flex w-800 top-0 "
                 timeout={200}
                 style={{ left: `${-288 * imageNumber}px`, transition: "0.8s" }}
-                onTouchStart={(e) => test(e)}
-                onTouchMove={(e) => test2(e)}
+                onTouchStart={(e) => touchStart(e)}
+                onTouchMove={(e) => touchMove(e)}
                 onTouchEnd={(e) => moveImage(e)}
               >
                 {flat.images.map((image, index) => (

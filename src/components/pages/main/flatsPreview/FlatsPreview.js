@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getFlats } from "../../../../utils/firebase";
-import FlatPreview from "../../../flatPreview/FlatPreview";
+import FlatPreview from "./flatPreview/FlatPreview";
 import { ReactComponent as ViewAll } from "./svg/viewAllicon.svg";
 const FlatsPreview = ({ setFlat }) => {
   const [flats, setFlats] = useState([]);
@@ -53,7 +53,7 @@ const FlatsPreview = ({ setFlat }) => {
         <ul className="flex flex-col items-center mb-12" >
           {flats.slice(0, slice).map((flat, index) => (
             <li className="card mb-10 w-60 h-309 last:mb-0" id={`flatNumber${index}`}>
-              <FlatPreview flat={flat} setFlat={setFlat} />
+              <FlatPreview setFlat={setFlat} flat={flat} />
             </li>
           ))}
         </ul>
