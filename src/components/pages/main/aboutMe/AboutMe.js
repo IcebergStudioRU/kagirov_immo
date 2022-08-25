@@ -2,7 +2,7 @@ import React from 'react';
 import Zelimhan from "./images/zelimkhan.png"
 const AboutMe = () => {
     return (
-        <div className="bg-aboutMeBg w-1/1 relative " >
+        <div className="bg-aboutMeBg w-1/1 relative " id="AboutMe" >
 
             <div className='flex justify-center border-b-8-black mb-4 bg-aboutMeImage bg-no-repeat bg-cover'>
                 <img src={Zelimhan} alt="makler"/>

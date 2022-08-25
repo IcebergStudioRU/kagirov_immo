@@ -1,7 +1,7 @@
 import React from 'react'
 const Quotes = () => {
     return (
-        <div className='bg-QuotesBg'>
+        <div className='bg-QuotesBg' id="Review">
             <div className='bg-quotesMeImage bg-bottom bg-no-repeat '>
                 <div className=' max-w-mobileContainer mx-auto pt-16 pb-3 px-5 flex flex-col items-center'>
                     <div className='w-20 h-20 border-2 border-r-2 rounded-full mb-3'></div>

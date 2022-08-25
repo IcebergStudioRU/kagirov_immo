@@ -4,10 +4,6 @@ import "./Header.css";
 import { ReactComponent as Logo } from "./svg/logo-kagirov-immo.svg";
 
 const Header = ({ mobileMenu, setMobileMenu }) => {
-  const hamHeader = document.getElementsByClassName('hamHeader')
-  const changeHamHeader = () => {
-      hamHeader.style.display = "none"
-  }
   return (
     <div className={mobileMenu ? "headerFixed" : "headerDefault"}>
       <div className="max-w-mobileContainer mx-auto p-5 flex justify-between ">

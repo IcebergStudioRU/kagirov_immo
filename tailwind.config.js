@@ -13,6 +13,7 @@ module.exports = {
         headerBg: "rgba(32, 39, 48, 0.7);",
         aboutMeBg: "#202730",
         screenBorderBottom: "rgba(32, 39, 48, 0.7);",
+        contactsCoating: 'rgba(32, 39, 48, 0.91)',
         imgZelimBorderBottom: "rgba(14, 14, 14, 0.9);",
         productBg: "rgba(180, 179, 179, 0.15);",
         flatsAddressBg: "rgba(0, 0, 0, 0.5);",
@@ -23,7 +24,9 @@ module.exports = {
         formTextColor: "#474747",
         formBtnColor: "#1B1A1A",
         screenBtnBg: "#384A63",
-        seeMoreBg: 'rgba(255, 255, 255, 0.67);'
+        seeMoreBg: 'rgba(255, 255, 255, 0.67);',
+        footerCoating: 'rgba(255, 255, 255, 0.95)',
+        contactsColor: '#ECE7E4'
       },
       maxWidth: {
         mobileContainer: "480px",
@@ -59,7 +62,7 @@ module.exports = {
         aboutMeImage:
           "url('../src/components/pages/main/aboutMe/svg/svg-stripes.svg')",
         quotesMeImage:
-          "url('../src/components/pages/main/quotes/svg/svg-stripes.svg')",
+          "url('../src/components/pages/main/review/svg/svg-stripes.svg')",
         formImage: "url('../src/components/pages/main/form/img/formBg.png')",
         whyUsImage: "url('../src/components/pages/main/whyUs/img/WhyUsBg.jpg')",
         flats1Bg: "url('../src/components/pages/flats/products/img/flat1.png')",
@@ -67,6 +70,8 @@ module.exports = {
         flats3Bg: "url('../src/components/pages/flats/products/img/flat3.png')",
         mobileMenuBg:
           "url('../src/components/mobileMenu/images/mobile-menu_bg.jpg')",
+        contactsBg: "url('../src/components/pages/contacts/img/contactsBg.jpg')",
+        footerBg: "url(../src/components/footer/img/footerBg.jpg)"
       },
       spacing: {
         297: "297px",

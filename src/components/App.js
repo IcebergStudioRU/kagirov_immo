@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Flat from "./pages/flat/Flat";
 import Main from "./pages/main/Main";
+import Contacts from "./pages/contacts/Contacts";
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [flat, setFlat] = useState({})
@@ -19,6 +20,7 @@ const App = () => {
           }
         />
         <Route path="/flat" element={<Flat flat={flat} />} />
+        <Route path="/contacts" element={<Contacts mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}/>}/>
       </Routes>
     </>
   );

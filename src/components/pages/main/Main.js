@@ -4,7 +4,7 @@ import Header from "../../header/Header";
 import MobileMenu from "../../mobileMenu/MobileMenu";
 import AboutMe from "./aboutMe/AboutMe";
 import Form from "./form/Form";
-import Quotes from "./quotes/Quotes";
+import Review from "./review/Review";
 import Screen from "./screen/Screen";
 import WhyUs from "./whyUs/WhyUs";
 import FlatsPreview from "./flatsPreview/FlatsPreview";
@@ -19,8 +19,8 @@ const Main = ({ mobileMenu, setMobileMenu, setFlat }) => {
         />
       </Screen>
       <AboutMe />
-      <Quotes />
       <FlatsPreview setFlat={setFlat} />
+      <Review />
       <Form />
       <WhyUs />
       <Footer />

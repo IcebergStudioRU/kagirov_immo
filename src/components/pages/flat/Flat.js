@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ReactComponent as Bed } from "./svg/bed.svg";
 import { ReactComponent as Door } from "./svg/door.svg";
 import { ReactComponent as Bath } from "./svg/bath.svg";
+import Footer from "../../footer/Footer";
 import { Link } from "react-router-dom";
 const Flat = ({ flat }) => {
   const [imageNumber, setImageNumber] = useState(0);
@@ -12,9 +13,10 @@ const Flat = ({ flat }) => {
 
   return (
     <>
+    <div>
       <div className="max-w-mobileContainer mx-auto px-5 pb-14 pt-5">
       <div className="mb-5">
-        <Link to="/" className="font-Montserrat text-xl font-medium text-formTextColor">
+      <Link to="/" className="font-Montserrat text-xl font-medium text-formTextColor">
             Back
         </Link>
       </div>
@@ -83,6 +85,8 @@ const Flat = ({ flat }) => {
               </div>
             </div>
       </div>
+      <Footer/>
+    </div>
     
     </>
   );

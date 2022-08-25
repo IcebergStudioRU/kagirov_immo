@@ -4,7 +4,7 @@ import {ReactComponent as Phone} from "./svg/Phone.svg"
 import {ReactComponent as Email} from "./svg/E-mail.svg"
 const Form = () => {
     return (
-        <div className='bg-formImage bg-cover bg-no-repeat'>
+        <div className='bg-formImage bg-cover bg-no-repeat' id="Form">
             <div className='bg-formCoating'>
                 <div className='max-w-mobileContainer mx-auto pt-16 pb-10 px-5 flex flex-col items-center'>
                     <h1 className='font-Montserrat font-bold text-formTextColor text-3xl'>SELL / RENT</h1>

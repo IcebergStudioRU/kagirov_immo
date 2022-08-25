@@ -44,7 +44,7 @@ const FlatsPreview = ({ setFlat }) => {
   };
 
   return (
-    <div className="bg-productBg">
+    <div className="bg-productBg" id="FlatsPrewiew">
       <div className="max-w-mobileContainer mx-auto pt-5 pb-24 px-5 flex flex-col items-center">
         <ul className="flex flex-col items-center mb-12">
           {flats.slice(0, slice).map((flat) => (
