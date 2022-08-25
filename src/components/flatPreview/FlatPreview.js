@@ -49,7 +49,7 @@ const FlatPreview = ({ flat, setFlat }) => {
               </div>
             </div>
             <div className="absolute bottom-0 flex justify-center items-center">
-              <Link onClick={onSetFlat} to="/flat" className="seeMoreLink">
+              <Link onClick={onSetFlat} to="/flat" className="seeMoreLink" >
                 See more
               </Link>
             </div>

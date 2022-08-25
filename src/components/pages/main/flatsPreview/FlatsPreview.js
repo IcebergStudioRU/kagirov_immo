@@ -23,37 +23,41 @@ const FlatsPreview = ({ setFlat }) => {
   const ViewHideAll = () => {
     if (slice === 3) {
       return (
-        <button
+        <a
           className="font-Montserrat text-2xl flex flex-col items-center"
           onClick={changeSlice}
+          id="Review"
         >
           View All
           <ViewAll />
-        </button>
+        </a>
       );
     }
     return (
-      <button
+      <a
         className="font-Montserrat text-2xl flex flex-col items-center "
         onClick={changeSlice}
+        id="Review"
+        href="#flatNumber1"
       >
         <ViewAll className="rotate-180" />
         Hide
-      </button>
+      </a>
     );
   };
 
   return (
     <div className="bg-productBg" id="FlatsPrewiew">
+      <div id="up"></div>
       <div className="max-w-mobileContainer mx-auto pt-5 pb-24 px-5 flex flex-col items-center">
-        <ul className="flex flex-col items-center mb-12">
-          {flats.slice(0, slice).map((flat) => (
-            <li className="card mb-10 w-60 h-309 last:mb-0">
+        <ul className="flex flex-col items-center mb-12" >
+          {flats.slice(0, slice).map((flat, index) => (
+            <li className="card mb-10 w-60 h-309 last:mb-0" id={`flatNumber${index}`}>
               <FlatPreview flat={flat} setFlat={setFlat} />
             </li>
           ))}
         </ul>
-        <ViewHideAll />
+        <ViewHideAll/>
       </div>
     </div>
   );

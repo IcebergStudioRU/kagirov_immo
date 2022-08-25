@@ -10,9 +10,11 @@ const Screen = ({ children }) => {
           <br />
           dolor
         </p>
-        <button className="w-32 h-10 bg-screenBtnBg rounded text-white shadow-xl font-Montserrat text-xl">
-          Contact Us!
-        </button>
+        <div className="w-32 h-10 bg-screenBtnBg rounded text-white shadow-xl flex items-center justify-center">
+          <a className=" font-Montserrat text-xl" id="AboutMe" href="#Form">
+            Contact Us!
+          </a>
+        </div>
       </div>
       <div className="w-100% h-27 absolute bottom-0 bg-screenBorderBottom"></div>
     </div>
