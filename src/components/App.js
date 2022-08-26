@@ -11,9 +11,7 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          exact="true"
           element={
-
             <Main
               mobileMenu={mobileMenu}
               setMobileMenu={setMobileMenu}
