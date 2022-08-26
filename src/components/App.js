@@ -19,8 +19,8 @@ const App = () => {
             />
           }
         />
-        <Route path="/flat" exact="false" element={<Flat flat={flat} />} />
-        <Route path="/contacts" exact="true" element={<Contacts mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}/>}/>
+        <Route path="/flat" element={<Flat flat={flat} />} />
+        <Route path="/contacts" element={<Contacts mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}/>}/>
       </Routes>
     </>
   );
