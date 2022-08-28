@@ -10,7 +10,7 @@ import { ReactComponent as Bed } from "./svg/bed.svg";
 import { ReactComponent as Door } from "./svg/door.svg";
 import { ReactComponent as Bath } from "./svg/bath.svg";
 
-const Flat = ({flat}) => {
+const Flat = ({ flat }) => {
   // const [flat, setFlat] = useState({});
   const [imageNumber, setImageNumber] = useState(0);
   const [touch, setTouch] = useState(0);
