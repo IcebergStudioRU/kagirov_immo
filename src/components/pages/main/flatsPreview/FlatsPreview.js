@@ -7,7 +7,7 @@ const FlatsPreview = ({ setFlat }) => {
   const [slice, setSlice] = useState(3);
 
   useEffect(() => {
-    getFlats().then((response) => setFlats([...response]));
+    getFlats().then((response) => setFlats([...response]))
   }, []);
 
   const changeSlice = () => {

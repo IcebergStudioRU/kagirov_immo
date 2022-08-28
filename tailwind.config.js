@@ -9,6 +9,16 @@ module.exports = {
       zIndex: {
         "-1": "-1",
       },
+      screens: {
+        'tablet': '640px',
+        // => @media (min-width: 640px) { ... }
+  
+        'laptop': '1024px',
+        // => @media (min-width: 1024px) { ... }
+  
+        'desktop': '1200px',
+        // => @media (min-width: 1280px) { ... }
+      },
       colors: {
         headerBg: "rgba(32, 39, 48, 0.7);",
         aboutMeBg: "#202730",

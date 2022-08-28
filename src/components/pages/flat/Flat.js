@@ -1,14 +1,29 @@
-import React, { useState } from "react";
+//REACT
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+//COMPONENETS
+import Footer from "../../footer/Footer";
+//FUNCTIONS
+import { getFlat } from "../../../utils/firebase";
+//SVG
 import { ReactComponent as Bed } from "./svg/bed.svg";
 import { ReactComponent as Door } from "./svg/door.svg";
 import { ReactComponent as Bath } from "./svg/bath.svg";
-import Footer from "../../footer/Footer";
-import { Link } from "react-router-dom";
 
-const Flat = ({ flat }) => {
+const Flat = ({flat}) => {
+  // const [flat, setFlat] = useState({});
   const [imageNumber, setImageNumber] = useState(0);
   const [touch, setTouch] = useState(0);
   const [untouch, setUntouch] = useState(0);
+
+  // useEffect(() => {
+  //   getFlat("2X81qqa10BKN8maAzW5m").then((response) => console.log(response));
+  // }, [])
+
+  // useEffect(() => {
+  //   getFlat("2X81qqa10BKN8maAzW5m")
+  //     .then((response) => setFlat({ ...response }))
+  // }, []);
 
   const changeImageNumber = (imageNumber) => {
     setImageNumber(imageNumber);
@@ -82,7 +97,7 @@ const Flat = ({ flat }) => {
                 onTouchEnd={(e) => moveImage(e)}
               >
                 {flat.images.map((image, index) => (
-                  <li className="w-72 h-96">
+                  <li key={index} className="w-72 h-96">
                     <img
                       src={image}
                       alt="img"
