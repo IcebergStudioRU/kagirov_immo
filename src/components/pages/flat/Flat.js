@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { ReactComponent as Bed } from "./svg/bed.svg";
 import { ReactComponent as Door } from "./svg/door.svg";
 import { ReactComponent as Bath } from "./svg/bath.svg";
+import { useNavigate } from 'react-router-dom';
+
 import Footer from "../../footer/Footer";
 import { Link } from "react-router-dom";
 
-const Flat = ({ flat }) => {
+const Flat = ({ flat, history }) => {
+  const navigate = useNavigate();
   const [imageNumber, setImageNumber] = useState(0);
   const [touch, setTouch] = useState(0);
   const [untouch, setUntouch] = useState(0);

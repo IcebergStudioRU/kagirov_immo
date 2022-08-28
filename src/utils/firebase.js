@@ -23,7 +23,11 @@ initializeApp(firebaseConfig)
 const db = getFirestore()
 
 const flatsCol = collection(db, 'flats')
+const reviewsCol = collection(db, 'reviews')
 
 export const getFlats = () => {
     return getDocs(flatsCol).then((response) => response.docs.map((doc) => ({...doc.data(), id: doc.id})))
+}
+export const getReviews = () => {
+  return getDocs(reviewsCol).then((response) => response.docs.map((doc) => ({...doc.data(), id: doc.id})))
 }
