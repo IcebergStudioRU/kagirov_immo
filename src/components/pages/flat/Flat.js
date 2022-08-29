@@ -17,14 +17,6 @@ const Flat = () => {
   const [touch, setTouch] = useState(0);
   const [untouch, setUntouch] = useState(0);
 
-  // useEffect(() => {
-  //   getFlat("2X81qqa10BKN8maAzW5m").then((response) => console.log(response));
-  // }, [])
-
-  // useEffect(() => {
-  //   getFlat("2X81qqa10BKN8maAzW5m")
-  //     .then((response) => setFlat({ ...response })).then((response) => console.log(response))
-  // }, []);
   useEffect(() => {
     getFlat("2X81qqa10BKN8maAzW5m").then((response) => {
       setFlat({ ...response });
