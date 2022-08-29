@@ -10,8 +10,9 @@ import { ReactComponent as Bed } from "./svg/bed.svg";
 import { ReactComponent as Door } from "./svg/door.svg";
 import { ReactComponent as Bath } from "./svg/bath.svg";
 
-const Flat = ({ flat }) => {
-  // const [flat, setFlat] = useState({});
+const Flat = () => {
+  const [flat, setFlat] = useState({});
+  const [load, setLoad] = useState(false);
   const [imageNumber, setImageNumber] = useState(0);
   const [touch, setTouch] = useState(0);
   const [untouch, setUntouch] = useState(0);
@@ -22,8 +23,14 @@ const Flat = ({ flat }) => {
 
   // useEffect(() => {
   //   getFlat("2X81qqa10BKN8maAzW5m")
-  //     .then((response) => setFlat({ ...response }))
+  //     .then((response) => setFlat({ ...response })).then((response) => console.log(response))
   // }, []);
+  useEffect(() => {
+    getFlat("2X81qqa10BKN8maAzW5m").then((response) => {
+      setFlat({ ...response });
+      setLoad(true);
+    });
+  });
 
   const changeImageNumber = (imageNumber) => {
     setImageNumber(imageNumber);
@@ -70,6 +77,9 @@ const Flat = ({ flat }) => {
     setUntouch(x2);
     console.log(x2);
   };
+  if (!load) {
+    return <div>Загружаем</div>;
+  }
 
   return (
     <>
