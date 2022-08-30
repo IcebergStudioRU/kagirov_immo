@@ -1,22 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { getFlats } from "../../utils/firebase";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import "./FlatsPreview.css"
+import "./FlatsPreview.css";
+//CONTEXT
+import { ContextGlobal } from "../../context/GlobalContextComponent";
+//SVG
 import { ReactComponent as Bed } from "../../assets/flatsPreview/svg/bed.svg";
 import { ReactComponent as Door } from "../../assets/flatsPreview/svg/door.svg";
 import { ReactComponent as Bath } from "../../assets/flatsPreview/svg/bath.svg";
 import { ReactComponent as ViewAll } from "../../assets/flatsPreview/svg/viewAllicon.svg";
-const FlatsPreview = ({ setFlat }) => {
-  const [flats, setFlats] = useState([]);
+
+const FlatsPreview = () => {
   const [slice, setSlice] = useState(3);
-
-  useEffect(() => {
-    getFlats().then((response) => setFlats([...response]))
-  }, []);
-
-    const onSetFlat = (flat) => {
-      setFlat({ ...flat });
-    };
+  const {flats} = useContext(ContextGlobal)
 
   const changeSlice = () => {
     setSlice((prev) => {
@@ -103,7 +98,6 @@ const FlatsPreview = ({ setFlat }) => {
                       </div>
                       <div className="absolute bottom-0 flex justify-center items-center">
                         <Link
-                          onClick={() => onSetFlat(flat)}
                           to={`/flat/${flat.id}`}
                           className="seeMoreLink"
                         >
