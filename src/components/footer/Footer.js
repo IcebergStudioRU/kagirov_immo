@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as Logo } from "./svg/logo-kagirov-immo.svg";
+import { ReactComponent as Logo } from "../../assets/footer/svg/logo-kagirov-immo.svg";
 const Footer = () => {
     return (
     <div className='bg-footerBg'>

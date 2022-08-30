@@ -1,19 +1,22 @@
-import React from "react";
+import React, {useContext} from "react";
 import HamBtn from "../hamBtn/HamBtn";
 import { Link } from "react-router-dom";
 import "./MobileMenu.css";
+import { ContextGlobal } from "../../context/GlobalContextComponent";
 
-const MobileMenu = ({ mobileMenu, setMobileMenu }) => {
+const MobileMenu = () => {
+  const { mobileMenu, setMobileMenu } = useContext(ContextGlobal);
   
   const closeMobileMenu = () => {
     setMobileMenu(false)
     document.querySelector("body").style.overflow = "auto"
   }
+  
   return (
     <div className={mobileMenu ? "mobileMenu_opened" : "mobileMenu_closed"}>
       <div className="max-w-mobileContainer mx-auto p-5 ">
         <div className="hamMobMenu flex flex-col items-end mb-28">
-          <HamBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}/>
+          <HamBtn/>
         </div>
         <div className="flex flex-col items-center">
           <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" href="#AboutMe" onClick={closeMobileMenu}>

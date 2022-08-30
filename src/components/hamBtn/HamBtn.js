@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Hamburger from "hamburger-react";
-const HamBtn = ({ mobileMenu, setMobileMenu }) => {
+import { ContextGlobal } from "../../context/GlobalContextComponent";
+
+const HamBtn = () => {
+  const { mobileMenu, setMobileMenu } = useContext(ContextGlobal);
+
   const body = document.querySelector("body");
   const overflowBody = mobileMenu ? "scroll" : "hidden";
   const changeMobileMenu = () => {
@@ -8,6 +12,7 @@ const HamBtn = ({ mobileMenu, setMobileMenu }) => {
     body.style.overflow = `${overflowBody}`;
     body.style.overflowX = "hidden";
   };
+
   return (
     <Hamburger
       toggled={mobileMenu}
