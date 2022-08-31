@@ -20,17 +20,25 @@ import Header from "../../components/header/Header.js";
 import MobileMenu from "../../components/mobileMenu/MobileMenu.js";
 import Loader from "../../components/loader/Loader.js";
 import { ContextGlobal } from "../../context/GlobalContextComponent.js";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Main = () => {
   const { loader } = useContext(ContextGlobal);
 
   if (loader) {
-    return <Loader />;
+    return (
+      <AnimatePresence>
+        <Loader exit={{opacity: 0}} />
+      </AnimatePresence>
+    );
   }
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+    >
       <MobileMenu />
       <Screen>
         <Header />
