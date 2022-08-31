@@ -1,0 +1,43 @@
+import React, {useContext} from "react";
+import HamBtn from "../hamBtn/HamBtn";
+import { Link } from "react-router-dom";
+import "./MobileMenu.css";
+import { ContextGlobal } from "../../context/GlobalContextComponent";
+
+const MobileMenu = () => {
+  const { mobileMenu, setMobileMenu } = useContext(ContextGlobal);
+  
+  const closeMobileMenu = () => {
+    setMobileMenu(false)
+    document.querySelector("body").style.overflow = "auto"
+  }
+  
+  return (
+    <div className={mobileMenu ? "mobileMenu_opened" : "mobileMenu_closed"}>
+      <div className="max-w-mobileContainer mx-auto p-5 ">
+        <div className="hamMobMenu flex flex-col items-end mb-28">
+          <HamBtn/>
+        </div>
+        <div className="flex flex-col items-center">
+          <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" href="#AboutMe" onClick={closeMobileMenu}>
+            About Me
+          </a>
+          <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1"  href="#FlatsPrewiew" onClick={closeMobileMenu}>
+            Current Property
+          </a>
+          <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" href="#Form" onClick={closeMobileMenu}>
+            Sell/Rent
+          </a>
+          <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" href="#Review" onClick={closeMobileMenu}>
+            Review
+          </a>
+          <Link to="/contacts" className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" onClick={closeMobileMenu}>
+                Contacts
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MobileMenu;

@@ -1,0 +1,30 @@
+.mobileMenu_opened {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  color: black;
+  background-color: rgb(22, 26, 32);
+  transform: translateY(0%);
+  transition: 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  
+}
+.mobileMenu_closed {
+  transform: translateY(-100%);
+  transition: 0.5s;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 12;
+}
+
+.mobileMenu_container {
+  padding-top: 80px;
+  padding-bottom: 70px;
+  z-index: 1000;
+}
