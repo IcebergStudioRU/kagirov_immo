@@ -1,50 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import "./Review.css";
 import { ContextGlobal } from "../../context/GlobalContextComponent";
+import { useSwiperTouch } from "../../hooks/Swiper";
 
 const Quotes = () => {
-  const [reviewNumber, setReviewNumber] = useState(0);
-  const [touch, setTouch] = useState(0);
-  const [move, setMove] = useState(0);
-
   const { reviews } = useContext(ContextGlobal);
-
-  const changeReviewNumber = (reviewNumber) => {
-    setReviewNumber(reviewNumber);
-  };
-  const touchStart = (e) => {
-    setTouch(Math.round(e.touches[0].clientX));
-    console.log(touch);
-  };
-  const touchMove = (e) => {
-    setMove(Math.round(e.touches[0].clientX));
-    console.log(move);
-  };
-  const touchEnd = () => {
-    if (move === 0) {
-      return;
-    }
-    if (touch > move) {
-      if (touch - move < 30) {
-        return;
-      } else if (reviews.length - 1 > reviewNumber) {
-        setReviewNumber((prev) => prev + 1);
-      } else {
-        setReviewNumber(0);
-      }
-    }
-    if (touch < move) {
-      if (touch - move > -30) {
-        return;
-      } else if (0 < reviewNumber) {
-        setReviewNumber((prev) => prev - 1);
-      } else {
-        setReviewNumber(reviews.length - 1);
-      }
-    }
-    setTouch(0);
-    setMove(0);
-  };
+  const [reviewNumber, touchStart, touchMove, moveReview, changeReviewNumber] =
+    useSwiperTouch(reviews.length);
   return (
     <div className="bg-QuotesBg h-350">
       <div className="bg-reviewBg bg-bottom bg-no-repeat h-350">
@@ -55,12 +17,12 @@ const Quotes = () => {
                 className="flex absolute top-0 left-300"
                 onTouchStart={(e) => touchStart(e)}
                 onTouchMove={(e) => touchMove(e)}
-                onTouchEnd={() => touchEnd()}
+                onTouchEnd={() => moveReview()}
                 style={{ left: `${-300 * reviewNumber}px`, transition: "0.8s" }}
               >
                 {reviews.map((review, index) => (
                   <div className="flex flex-col items-center w-300 h-300 p-4">
-                    <img src={review.image} className="mb-6" />
+                    <img src={review.image} alt="dsomds" className="mb-6" />
                     <p className="font-Montserrat text-white">{review.name}</p>
                     <p className="font-Montserrat mb-7 text-white text-xs">
                       {review.firstName}

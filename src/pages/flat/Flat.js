@@ -9,7 +9,7 @@ import { getFlat } from "../.././utils/firebase";
 import { ReactComponent as Bed } from "../../assets/flat/svg/bed.svg";
 import { ReactComponent as Door } from "../../assets/flat/svg/door.svg";
 import { ReactComponent as Bath } from "../../assets/flat/svg/bath.svg";
-
+import { useSwiperTouch } from "../../hooks/Swiper";
 const COMPONENT_STATE = {
   LOAD: "LOAD",
   END: "END",
@@ -17,70 +17,27 @@ const COMPONENT_STATE = {
 };
 
 const Flat = () => {
-  const [flat, setFlat] = useState({});
-  const [stateComponent, setStateComponent] = useState(COMPONENT_STATE.LOAD);
-  const [imageNumber, setImageNumber] = useState(0);
-  const [touch, setTouch] = useState(0);
-  const [untouch, setUntouch] = useState(0);
   const params = useParams();
+
+  const [flat, setFlat] = useState({ images: [] });
+  const [stateComponent, setStateComponent] = useState(COMPONENT_STATE.LOAD);
+  const [imageNumber, touchStart, touchMove, moveImage, changeImageNumber] =
+    useSwiperTouch(flat.images.length);
 
   useEffect(() => {
     if (params && params.id) {
-      getFlat(params.id).then((response) => {
-        setFlat({ ...response });
-        setStateComponent(COMPONENT_STATE.END);
-      }).catch(()=>setStateComponent(COMPONENT_STATE.ERROR))
+      getFlat(params.id)
+        .then((response) => {
+          setFlat({ ...response });
+          setStateComponent(COMPONENT_STATE.END);
+          console.log();
+        })
+        .catch(() => setStateComponent(COMPONENT_STATE.ERROR));
     }
   }, []);
 
-  const changeImageNumber = (imageNumber) => {
-    setImageNumber(imageNumber);
-  };
-
-  const moveImage = (e) => {
-    if (untouch === 0) {
-      return;
-    }
-    if (touch > untouch) {
-      if (touch - untouch < 30) {
-        return;
-      } else if (flat.images.length - 1 > imageNumber) {
-        setImageNumber((prev) => {
-          return prev + 1;
-        });
-      } else {
-        setImageNumber(0);
-      }
-    }
-    if (touch < untouch) {
-      if (touch - untouch > -30) {
-        return;
-      } else if (0 < imageNumber) {
-        setImageNumber((prev) => {
-          return prev - 1;
-        });
-      } else {
-        setImageNumber(flat.images.length - 1);
-      }
-    }
-    setTouch(0);
-    setUntouch(0);
-  };
-
-  const touchStart = (e) => {
-    const x1 = Math.round(e.touches[0].clientX);
-    setTouch(x1);
-    console.log(x1);
-  };
-
-  const touchMove = (e) => {
-    const x2 = Math.round(e.touches[0].clientX);
-    setUntouch(x2);
-    console.log(x2);
-  };
-
   if (COMPONENT_STATE.ERROR === stateComponent) {
-    return <div>Такой квартиры не существует</div>
+    return <div>Такой квартиры не существует</div>;
   }
 
   if (COMPONENT_STATE.LOAD === stateComponent) {
