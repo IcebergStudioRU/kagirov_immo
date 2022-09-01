@@ -25,11 +25,28 @@ const Flat = () => {
 
   const [flat, setFlat] = useState({ images: [] });
   const [error, setError] = useState(false);
-  const [imageNumber, touchStart, touchMove, moveImage, changeImageNumber] =
-    useSwiperTouch(flat.images.length);
+  const [
+    imageNumber,
+    touchStart,
+    touchMove,
+    moveImage,
+    changeImageNumber,
+    language,
+  ] = useSwiperTouch(flat.images.length);
+
+  // useEffect(() => {
+  //   if (language) {
+  //     setLoader2(true);
+  //   }
+  // });
 
   useEffect(() => {
     if (params && params.id) {
+      setLoader2(true);
+      // const flat = getFlat().then((response) => setFlat({ ...response }));
+      // Promise.all([flat]).then(() => {
+      //   setLoader2(false)
+      // })
       getFlat(params.id)
         .then((response) => {
           setFlat({ ...response });
