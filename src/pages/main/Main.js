@@ -10,22 +10,18 @@ import Header from "../../components/header/Header.js";
 import MobileMenu from "../../components/mobileMenu/MobileMenu.js";
 import Loader from "../../components/loader/Loader.js";
 import { ContextGlobal } from "../../context/GlobalContextComponent.js";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Loader2 from "../../components/loader2/Loader2.js";
 
 const Main = () => {
   const { loader, loader2 } = useContext(ContextGlobal);
 
   if (loader2) {
-    return <Loader2/>
+    return <Loader2 />;
   }
 
   if (loader) {
-    return (
-      <AnimatePresence>
-        <Loader exit={{opacity: 0}} />
-      </AnimatePresence>
-    );
+    return <Loader exit={{ opacity: 0 }} />;
   }
 
   return (

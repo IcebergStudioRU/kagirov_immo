@@ -12,6 +12,7 @@ import { ReactComponent as Door } from "../../assets/flat/svg/door.svg";
 import { ReactComponent as Bath } from "../../assets/flat/svg/bath.svg";
 import { useSwiperTouch } from "../../hooks/Swiper";
 import Loader2 from "../../components/loader2/Loader2";
+import Loader from "../../components/loader/Loader";
 const COMPONENT_STATE = {
   LOAD: "LOAD",
   END: "END",
@@ -19,7 +20,7 @@ const COMPONENT_STATE = {
 };
 
 const Flat = () => {
-  const {loader2, setLoader2} = useContext(ContextGlobal)
+  const { loader, loader2, setLoader2 } = useContext(ContextGlobal);
   const params = useParams();
 
   const [flat, setFlat] = useState({ images: [] });
@@ -29,11 +30,10 @@ const Flat = () => {
 
   useEffect(() => {
     if (params && params.id) {
-      setLoader2(true)
       getFlat(params.id)
         .then((response) => {
           setFlat({ ...response });
-          setLoader2(false)
+          setLoader2(false);
         })
         .catch(() => setError(true));
     }
@@ -44,7 +44,11 @@ const Flat = () => {
   }
 
   if (loader2) {
-    return <Loader2/>;
+    return <Loader2 />;
+  }
+
+  if (loader) {
+    return <Loader exit={{ opacity: 0 }} />;
   }
 
   return (
@@ -127,7 +131,7 @@ const Flat = () => {
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
