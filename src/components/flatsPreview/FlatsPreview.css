@@ -25,7 +25,7 @@
 }
 @media (max-width: 1200px) and (min-width: 768px) {
     .card:hover .overlay {
-        transform: translateY(-424px);
+        transform: translateY(-361px);
         transition: 250ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }

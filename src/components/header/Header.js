@@ -14,7 +14,7 @@ const Header = () => {
     <div className={mobileMenu ? "headerFixed" : "headerDefault"}>
       <div className="mb:max-w-mobileContainer tl:max-w-tabletContainer mx-auto p-5 flex justify-between ">
         <Link to="/">
-          <Logo />
+          <Logo className="mb:w-140 mb:h-46 tl:w-186 tl:h-61"/>
         </Link>
         <div className={mobileMenu ? "block" : "none"}>
           <HamBtn />

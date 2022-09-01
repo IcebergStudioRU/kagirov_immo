@@ -1,18 +1,40 @@
-.review_bullet{
-    width: 10px;
-    height: 10px;
-    background-color: #D9D9D9;
-    border-radius: 50%;
+@media screen and (max-width: 767px) {
+    .review_bullet{
+        width: 10px;
+        height: 10px;
+        background-color: #D9D9D9;
+        border-radius: 50%;
+    }
+    .review_bullet:not(:last-child){
+        margin-right: 8px;
+    }
+    .review_active-bullet{
+        width: 14px;
+        height: 14px;
+        background-color: #284264;
+        border-radius: 50%;
+    }
+    .review_active-bullet:not(:last-child){
+        margin-right: 8px;
+    }
 }
-.review_bullet:not(:last-child){
-    margin-right: 8px;
-}
-.review_active-bullet{
-    width: 14px;
-    height: 14px;
-    background-color: #284264;
-    border-radius: 50%;
-}
-.review_active-bullet:not(:last-child){
-    margin-right: 8px;
+@media (max-width: 1200px) and (min-width: 768px) {
+    .review_bullet{
+        width: 12px;
+        height: 12px;
+        background-color: #D9D9D9;
+        border-radius: 50%;
+    }
+    .review_bullet:not(:last-child){
+        margin-right: 8px;
+    }
+    .review_active-bullet{
+        width: 18px;
+        height: 18px;
+        background-color: #284264;
+        border-radius: 50%;
+    }
+    .review_active-bullet:not(:last-child){
+        margin-right: 12px;
+    }
 }

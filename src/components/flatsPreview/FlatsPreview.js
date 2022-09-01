@@ -55,17 +55,17 @@ const FlatsPreview = () => {
         <ul className="flex flex-col items-center mb:mb-12 tl:mb-16">
           {flats.slice(0, slice).map((flat, index) => (
             <li
-              className="card mb:mb-10 tl:mb-20 mb:w-60 mb:h-309 tl:w-424 tl:h-544 last:mb-0"
+              className="card mb:mb-10 tl:mb-20 mb:w-60 mb:h-309 tl:w-380 tl:h-480 last:mb-0"
               id={`flatNumber${index}`}
             >
-              <div className="wrapper overflow-hidden relative mb:h-309 tl:h-544">
+              <div className="wrapper overflow-hidden relative mb:h-309 tl:h-480">
                 <img
                   src={flat.images[0]}
                   alt="flat1"
                   className="w-100% h-100% object-cover"
                 />
 
-                <div className="overlay absolute w-100% h-100% mb:top-245 tl:top-424 left-0 bg-flatsAddressBg ">
+                <div className="overlay absolute w-100% h-100% mb:top-245 tl:top-361 left-0 bg-flatsAddressBg ">
                   <div>
                     <div className="mb:p-5 tl:p-12 mb-10">
                       <p className="text-white font-Montserrat mb:text-xl tl:text-2xl text-center ">
