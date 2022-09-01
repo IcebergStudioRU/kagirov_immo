@@ -35,7 +35,7 @@ const Loader = () => {
             whileHover={{ y: -10 }}
             className="flex flex-col items-center"
           >
-            <p className="mb-2 text-center text-white mb-6 text-xl font-Montserrat text-center flex items-center h-24">
+            <p className=" text-white mb-6 text-xl font-Montserrat text-center flex items-center h-24">
               Please select your language
             </p>
             <button className="w-8 h-8 rounded-full border border-white text-white">
@@ -49,7 +49,7 @@ const Loader = () => {
             whileHover={{ y: -10 }}
             className="flex flex-col items-center"
           >
-            <p className="mb-2 text-center text-white mb-6 text-xl font-Montserrat text-center flex items-center h-24">
+            <p className=" text-white mb-6 text-xl font-Montserrat text-center flex items-center h-24">
               Bitte wählen Sie Ihre Sprache
             </p>
             <button className="w-8 h-8 rounded-full border border-white text-white">
@@ -63,7 +63,7 @@ const Loader = () => {
               setLanguage("RU");
             }}
           >
-            <p className="mb-2 text-center text-white mb-6 text-xl font-Montserrat text-center flex items-center h-24">
+            <p className="text-white mb-6 text-xl font-Montserrat text-center flex items-center h-24">
               Пожалуйста выберите ваш язык
             </p>
             <button className="w-8 h-8 rounded-full border border-white text-white">

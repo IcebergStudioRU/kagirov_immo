@@ -1,5 +1,5 @@
 import React from 'react';
-import Zelimhan from "../../assets/aboutMe/images/Zelimkhan.png"
+import Zelimhan from "../../assets/aboutMe/images/zelimkhan.png"
 const AboutMe = () => {
     return (
         <div className="bg-aboutMeBg w-1/1">

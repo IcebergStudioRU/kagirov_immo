@@ -1,6 +1,7 @@
 //REACT
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import { ContextGlobal } from "../../context/GlobalContextComponent";
 //COMPONENETS
 import Footer from "../.././components/footer/Footer";
 //FUNCTIONS
@@ -10,6 +11,7 @@ import { ReactComponent as Bed } from "../../assets/flat/svg/bed.svg";
 import { ReactComponent as Door } from "../../assets/flat/svg/door.svg";
 import { ReactComponent as Bath } from "../../assets/flat/svg/bath.svg";
 import { useSwiperTouch } from "../../hooks/Swiper";
+import Loader2 from "../../components/loader2/Loader2";
 const COMPONENT_STATE = {
   LOAD: "LOAD",
   END: "END",
@@ -17,31 +19,32 @@ const COMPONENT_STATE = {
 };
 
 const Flat = () => {
+  const {loader2, setLoader2} = useContext(ContextGlobal)
   const params = useParams();
 
   const [flat, setFlat] = useState({ images: [] });
-  const [stateComponent, setStateComponent] = useState(COMPONENT_STATE.LOAD);
+  const [error, setError] = useState(false);
   const [imageNumber, touchStart, touchMove, moveImage, changeImageNumber] =
     useSwiperTouch(flat.images.length);
 
   useEffect(() => {
     if (params && params.id) {
+      setLoader2(true)
       getFlat(params.id)
         .then((response) => {
           setFlat({ ...response });
-          setStateComponent(COMPONENT_STATE.END);
-          console.log();
+          setLoader2(false)
         })
-        .catch(() => setStateComponent(COMPONENT_STATE.ERROR));
+        .catch(() => setError(true));
     }
   }, []);
 
-  if (COMPONENT_STATE.ERROR === stateComponent) {
+  if (error) {
     return <div>Такой квартиры не существует</div>;
   }
 
-  if (COMPONENT_STATE.LOAD === stateComponent) {
-    return <div>Загружаем</div>;
+  if (loader2) {
+    return <Loader2/>;
   }
 
   return (

@@ -11,9 +11,14 @@ import MobileMenu from "../../components/mobileMenu/MobileMenu.js";
 import Loader from "../../components/loader/Loader.js";
 import { ContextGlobal } from "../../context/GlobalContextComponent.js";
 import { motion, AnimatePresence } from "framer-motion";
+import Loader2 from "../../components/loader2/Loader2.js";
 
 const Main = () => {
-  const { loader } = useContext(ContextGlobal);
+  const { loader, loader2 } = useContext(ContextGlobal);
+
+  if (loader2) {
+    return <Loader2/>
+  }
 
   if (loader) {
     return (
