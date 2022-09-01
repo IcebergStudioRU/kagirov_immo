@@ -43,10 +43,6 @@ const Flat = () => {
   useEffect(() => {
     if (params && params.id) {
       setLoader2(true);
-      // const flat = getFlat().then((response) => setFlat({ ...response }));
-      // Promise.all([flat]).then(() => {
-      //   setLoader2(false)
-      // })
       getFlat(params.id)
         .then((response) => {
           setFlat({ ...response });
@@ -59,14 +55,16 @@ const Flat = () => {
   if (error) {
     return <div>Такой квартиры не существует</div>;
   }
+  
+  if (loader) {
+    return <Loader exit={{ opacity: 0 }} />;
+  }
 
   if (loader2) {
     return <Loader2 />;
   }
 
-  if (loader) {
-    return <Loader exit={{ opacity: 0 }} />;
-  }
+
 
   return (
     <>

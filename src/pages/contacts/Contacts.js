@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 
 import { ReactComponent as Telegram } from "../../assets/contacts/svg/telegram.svg";
 import { ReactComponent as WhatsApp } from "../../assets/contacts/svg/WhatsApp.svg";
 import { ReactComponent as Instagram } from "../../assets/contacts/svg/instagram.svg";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
+import { ContextGlobal } from "../../context/GlobalContextComponent";
+import Loader from "../../components/loader/Loader";
+import Loader2 from "../../components/loader2/Loader2";
 const Contacts = () => {
+  const { loader, loader2, setLoader2 } = useContext(ContextGlobal);
+  useEffect(() => {
+    setLoader2(false);
+  });
+
+    if (loader) {
+      return <Loader exit={{ opacity: 0 }} />;
+    }
+
+    if (loader2) {
+      return <Loader2 />;
+    }
+
   return (
     <div className="relative">
       <div className="bg-contactsBg bg-cover bg-no-repeat h-screen">
