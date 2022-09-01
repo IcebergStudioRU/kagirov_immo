@@ -40,7 +40,7 @@ const GlobalContextComponent = ({ children }) => {
     } else {
       setLoader2(true)
     }
-  }, [language]);
+  }, []);
 
   useEffect(() => {
     const reviews = getReviews().then((response) => setReviews([...response]));
