@@ -27,7 +27,7 @@ const FlatsPreview = () => {
     if (slice === 3) {
       return (
         <a
-          className="font-Montserrat text-2xl flex flex-col items-center"
+          className="font-Montserrat mb:text-2xl tl:text-3xl flex flex-col items-center"
           onClick={changeSlice}
           id="Review"
         >
@@ -38,7 +38,7 @@ const FlatsPreview = () => {
     }
     return (
       <a
-        className="font-Montserrat text-2xl flex flex-col items-center "
+        className="font-Montserrat mb:text-2xl tl:text-3xl flex flex-col items-center "
         onClick={changeSlice}
         id="Review"
       >
@@ -51,47 +51,47 @@ const FlatsPreview = () => {
   return (
     <div className="bg-productBg" id="FlatsPrewiew">
       <div id="up"></div>
-      <div className="max-w-mobileContainer mx-auto pt-5 pb-24 px-5 flex flex-col items-center">
-        <ul className="flex flex-col items-center mb-12">
+      <div className="mb:max-w-mobileContainer tl:max-w-tabletContainer mx-auto pt-5 pb-24 px-5 flex flex-col items-center">
+        <ul className="flex flex-col items-center mb:mb-12 tl:mb-16">
           {flats.slice(0, slice).map((flat, index) => (
             <li
-              className="card mb-10 w-60 h-309 last:mb-0"
+              className="card mb:mb-10 tl:mb-20 mb:w-60 mb:h-309 tl:w-424 tl:h-544 last:mb-0"
               id={`flatNumber${index}`}
             >
-              <div className="wrapper overflow-hidden relative h-309">
+              <div className="wrapper overflow-hidden relative mb:h-309 tl:h-544">
                 <img
                   src={flat.images[0]}
                   alt="flat1"
                   className="w-100% h-100% object-cover"
                 />
 
-                <div className="overlay  absolute w-100% h-100% top-245 left-0 bg-flatsAddressBg ">
+                <div className="overlay absolute w-100% h-100% mb:top-245 tl:top-424 left-0 bg-flatsAddressBg ">
                   <div>
-                    <div className="p-5 mb-6">
-                      <p className="text-white font-Montserrat text-xl text-center ">
+                    <div className="mb:p-5 tl:p-12 mb-10">
+                      <p className="text-white font-Montserrat mb:text-xl tl:text-2xl text-center ">
                         {flat.address}
                       </p>
                     </div>
-                    <p className="text-white font-Montserrat text-xl text-center mb-6">
+                    <p className="text-white font-Montserrat mb:text-xl tl:text-2xl text-center mb:mb-6 tl:mb-20">
                       {flat.price}$
                     </p>
                     <div className="flex flex-col justify-end ">
-                      <div className="flex justify-center p-5">
+                      <div className="flex justify-center">
                         <div className="flex flex-col items-center mr-4">
-                          <Bed className="mb-1" />
-                          <p className="text-white font-Montserrat text-xs font-medium">
+                          <Bed className="mb-1 mb:w-8 mb:h-8 tl:w-10 tl:h-10 " />
+                          <p className="text-white font-Montserrat mb:text-xs tl:text-base font-medium">
                             {flat.bed} bed
                           </p>
                         </div>
                         <div className="flex flex-col items-center mr-4">
-                          <Door className="mb-1" />
-                          <p className="text-white font-Montserrat text-xs font-medium">
+                          <Door className="mb-1 mb:w-8 mb:h-8 tl:w-10 tl:h-10" />
+                          <p className="text-white font-Montserrat mb:text-xs tl:text-base font-medium">
                             {flat.rooms} rooms
                           </p>
                         </div>
                         <div className="flex flex-col items-center ">
-                          <Bath className="mb-1" />
-                          <p className="text-white font-Montserrat text-xs font-medium">
+                          <Bath className="mb-1 mb:w-8 mb:h-8 tl:w-10 tl:h-10" />
+                          <p className="text-white font-Montserrat mb:text-xs tl:text-base font-medium">
                             {flat.bath} bath
                           </p>
                         </div>

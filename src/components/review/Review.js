@@ -8,8 +8,8 @@ const Quotes = () => {
   const [reviewNumber, touchStart, touchMove, moveReview, changeReviewNumber] =
     useSwiperTouch(reviews.length);
   return (
-    <div className="bg-QuotesBg h-350">
-      <div className="bg-reviewBg bg-bottom bg-no-repeat h-350">
+    <div className="bg-QuotesBg mb:h-350 tl:h-493">
+      <div className="bg-reviewBg bg-bottom bg-no-repeat mb:h-350 tl:h-493">
         <div className="max-w-mobileContainer mx-auto p-5">
           <div className="flex flex-col items-center">
             <div className="w-300 h-300 relative overflow-hidden">
@@ -21,8 +21,8 @@ const Quotes = () => {
                 style={{ left: `${-300 * reviewNumber}px`, transition: "0.8s" }}
               >
                 {reviews.map((review, index) => (
-                  <div className="flex flex-col items-center w-300 h-300 p-4">
-                    <img src={review.image} alt="dsomds" className="mb-6" />
+                  <div className="flex flex-col items-center mb:w-300 mb:h-300 tl:w-450 tl:h-450 p-4">
+                    <img src={review.image} alt="dsomds" className="mb-6 mb:w-16 mb:h-16 tl:w-24 tl:h-24" />
                     <p className="font-Montserrat text-white">{review.name}</p>
                     <p className="font-Montserrat mb-7 text-white text-xs">
                       {review.firstName}

@@ -12,7 +12,7 @@ const Header = () => {
   
   return (
     <div className={mobileMenu ? "headerFixed" : "headerDefault"}>
-      <div className="max-w-mobileContainer mx-auto p-5 flex justify-between ">
+      <div className="mb:max-w-mobileContainer tl:max-w-tabletContainer mx-auto p-5 flex justify-between ">
         <Link to="/">
           <Logo />
         </Link>
