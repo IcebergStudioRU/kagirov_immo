@@ -1,20 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Review.css";
 import { ContextGlobal } from "../../context/GlobalContextComponent";
 import { useSwiperTouch } from "../../hooks/Swiper";
 
 const Quotes = () => {
+  const [sliderContainerPx, setSliderContainerPx] = useState(0)
   const { reviews, viewPort } = useContext(ContextGlobal);
   const [reviewNumber, touchStart, touchMove, moveReview, changeReviewNumber] =
     useSwiperTouch(reviews.length);
-  let val = 0
-  if (viewPort === "mobile") {
-    val = -300
-  } else if (viewPort === "tablet"){
-    val = -400
-  } else {
-    val = -600
-  }
+  useEffect(() => {
+    let val = 0
+    if (viewPort === "mobile") {
+      val = -300
+    } else if (viewPort === "tablet"){
+      val = -400
+    } else {
+      val = -600
+    }
+    setSliderContainerPx(val)
+  }, [viewPort])
+  // let val = 0
+  // if (viewPort === "mobile") {
+  //   val = -300
+  // } else if (viewPort === "tablet"){
+  //   val = -400
+  // } else {
+  //   val = -600
+  // }
   return (
     <div className="bg-QuotesBg mb:h-350 tl:h-493">
       <div className="bg-reviewBg bg-bottom bg-no-repeat mb:h-350 tl:h-493">
@@ -26,12 +38,21 @@ const Quotes = () => {
                 onTouchStart={(e) => touchStart(e)}
                 onTouchMove={(e) => touchMove(e)}
                 onTouchEnd={() => moveReview()}
-                style={{ left: `${val * reviewNumber}px`, transition: "0.8s" }}
+                style={{
+                  left: `${sliderContainerPx * reviewNumber}px`,
+                  transition: "0.8s",
+                }}
               >
                 {reviews.map((review, index) => (
                   <div className="flex flex-col items-center mb:w-300 mb:h-300 tl:w-400 tl:h-400 p-4">
-                    <img src={review.image} alt="dsomds" className="mb:mb-6 tl:mb-10 mb:w-16 mb:h-16 tl:w-24 tl:h-24" />
-                    <p className="font-Montserrat text-white mb:text-xl tl:text-3xl">{review.name}</p>
+                    <img
+                      src={review.image}
+                      alt="dsomds"
+                      className="mb:mb-6 tl:mb-10 mb:w-16 mb:h-16 tl:w-24 tl:h-24"
+                    />
+                    <p className="font-Montserrat text-white mb:text-xl tl:text-3xl">
+                      {review.name}
+                    </p>
                     <p className="font-Montserrat mb-7 text-white mb:text-xs tl:text-lg">
                       {review.firstName}
                     </p>

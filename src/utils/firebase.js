@@ -22,7 +22,7 @@ initializeApp(firebaseConfig);
 const db = getFirestore();
 
 const flatsCol = collection(db, "flats");
-const reviewsCol = collection(db, "review");
+const reviewsCol = collection(db, "reviews");
 
 export const getFlats = () => {
   return getDocs(flatsCol).then((response) =>

@@ -13,11 +13,6 @@ import { ReactComponent as Bath } from "../../assets/flat/svg/bath.svg";
 import { useSwiperTouch } from "../../hooks/Swiper";
 import Loader2 from "../../components/loader2/Loader2";
 import Loader from "../../components/loader/Loader";
-const COMPONENT_STATE = {
-  LOAD: "LOAD",
-  END: "END",
-  ERROR: "ERROR",
-};
 
 const Flat = () => {
   const { loader, loader2, setLoader2 } = useContext(ContextGlobal);
@@ -31,7 +26,6 @@ const Flat = () => {
     touchMove,
     moveImage,
     changeImageNumber,
-    language,
   ] = useSwiperTouch(flat.images.length);
 
   // useEffect(() => {

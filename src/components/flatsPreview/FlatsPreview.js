@@ -55,6 +55,7 @@ const FlatsPreview = () => {
         <ul className="flex flex-col items-center mb:mb-12 tl:mb-16">
           {flats.slice(0, slice).map((flat, index) => (
             <li
+              key={index}
               className="card mb:mb-10 tl:mb-20 mb:w-60 mb:h-309 tl:w-380 tl:h-480 last:mb-0"
               id={`flatNumber${index}`}
             >
