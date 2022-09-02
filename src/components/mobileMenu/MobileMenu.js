@@ -14,24 +14,24 @@ const MobileMenu = () => {
   
   return (
     <div className={mobileMenu ? "mobileMenu_opened" : "mobileMenu_closed"}>
-      <div className="max-w-mobileContainer mx-auto p-5 ">
-        <div className="hamMobMenu flex flex-col items-end mb-28">
+      <div className="mb:max-w-mobileContainer tl:max-w-tabletContainer mx-auto mb:p-5 tl:p-5">
+        <div className="hamMobMenu flex flex-col items-end mb:mb-28 tl:mb-40">
           <HamBtn/>
         </div>
         <div className="flex flex-col items-center">
-          <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" href="#AboutMe" onClick={closeMobileMenu}>
+          <a className="text-white font-font-Montserrat border-b  mb:text-2xl tl:text-3xl mb:mb-4 tl:mb-10 mb:pb-1 tl:pb-2" href="#AboutMe" onClick={closeMobileMenu}>
             About Me
           </a>
-          <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1"  href="#FlatsPrewiew" onClick={closeMobileMenu}>
+          <a className="text-white font-font-Montserrat border-b  mb:text-2xl tl:text-3xl mb:mb-4 tl:mb-10 mb:pb-1 tl:pb-2"  href="#FlatsPrewiew" onClick={closeMobileMenu}>
             Current Property
           </a>
-          <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" href="#Form" onClick={closeMobileMenu}>
+          <a className="text-white font-font-Montserrat border-b  mb:text-2xl tl:text-3xl mb:mb-4 tl:mb-10 mb:pb-1 tl:pb-2" href="#Form" onClick={closeMobileMenu}>
             Sell/Rent
           </a>
-          <a className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" href="#Review" onClick={closeMobileMenu}>
+          <a className="text-white font-font-Montserrat border-b  mb:text-2xl tl:text-3xl mb:mb-4 tl:mb-10 mb:pb-1 tl:pb-2" href="#Review" onClick={closeMobileMenu}>
             Review
           </a>
-          <Link to="/contacts" className="text-white font-font-Montserrat border-b  text-2xl mb-4 pb-1" onClick={closeMobileMenu}>
+          <Link to="/contacts" className="text-white font-font-Montserrat border-b  mb:text-2xl tl:text-3xl mb:mb-4 tl:mb-10 mb:pb-1 tl:pb-2" onClick={closeMobileMenu}>
                 Contacts
           </Link>
         </div>

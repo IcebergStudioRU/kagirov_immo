@@ -97,7 +97,7 @@ const FlatsPreview = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="absolute bottom-0 flex justify-center items-center">
+                      <div className="absolute bottom-0 flex justify-center items-center w-full ">
                         <Link
                           to={`/flat/${flat.id}`}
                           className="seeMoreLink"

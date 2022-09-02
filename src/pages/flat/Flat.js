@@ -62,21 +62,21 @@ const Flat = () => {
 
   return (
     <>
-      <div>
-        <div className="max-w-mobileContainer mx-auto px-5 pb-14 pt-5">
-          <div className="mb-5">
+      <div className="h-screen">
+        <div className="mb:max-w-mobileContainer tl:max-w-tabletContainer mx-auto mb:px-5 mb:pb-14 tl:px-10 tl:pb-20 pt-5">
+          <div className="mb:mb-10 tl:mb-16">
             <Link
               to="/"
-              className="font-Montserrat text-xl font-medium text-formTextColor"
+              className="font-Montserrat mb:text-xl tl:text-2xl font-medium text-formTextColor"
             >
               Back
             </Link>
           </div>
-          <p className="font-Montserrat text-xl font-medium mb-14 text-formTextColor">
+          <p className="font-Montserrat mb:text-xl tl:text-2xl font-medium mb:mb-14 tl:mb-32 text-formTextColor">
             {flat.address}
           </p>
           <div className="flex flex-col items-center mb-14">
-            <div className="w-72 h-96 relative mb-2 overflow-hidden">
+            <div className="mb:w-72 mb:h-96 tl:w-380 tl:h-480 relative mb-2 overflow-hidden">
               <ul
                 className="absolute flex w-800 top-0 "
                 timeout={200}
@@ -86,7 +86,7 @@ const Flat = () => {
                 onTouchEnd={(e) => moveImage(e)}
               >
                 {flat.images.map((image, index) => (
-                  <li key={index} className="w-72 h-96">
+                  <li key={index} className="mb:w-72 mb:h-96 tl:w-380 tl:h-480">
                     <img
                       src={image}
                       alt="img"
@@ -96,10 +96,10 @@ const Flat = () => {
                 ))}
               </ul>
             </div>
-            <ul className="flex">
+            <ul className="flex mb:mb-8 tl:mb-10">
               {flat.images.map((image, index) => (
                 <li
-                  className="w-12 h-16 mr-2 last:mr-0"
+                  className="mb:w-12 mb:h-16 tl:w-16 tl:h-20 mr-2 last:mr-0"
                   onClick={() => {
                     changeImageNumber(index);
                   }}
@@ -113,27 +113,27 @@ const Flat = () => {
               ))}
             </ul>
           </div>
-          <p className="text-2xl font-Montserrat font-semibold text-formTextColor mb-5">
+          <p className="mb:text-2xl tl:text-3xl font-Montserrat font-semibold text-formTextColor mb:mb-5 tl:mb-10">
             {flat.price}$
           </p>
-          <p className="gg w-80 text-formTextColor font-Montserrat font-normal mb-10">
+          <p className="w-80 text-formTextColor font-Montserrat font-normal mb-10 mb:text-base tl:text-lg">
             {flat.description}
           </p>
           <div className="flex">
             <div className="flex flex-col items-center mr-4">
-              <Bed className="mb-1" />
+              <Bed className="mb-1 mb:w-8 mb:h-8 tl:w-10 tl:h-10" />
               <p className="text-formTextColor font-Montserrat text-xs font-medium">
                 {flat.bed} bed
               </p>
             </div>
             <div className="flex flex-col items-center mr-4">
-              <Door className="mb-1" />
+              <Door className="mb-1 mb:w-8 mb:h-8 tl:w-10 tl:h-10" />
               <p className="text-formTextColor font-Montserrat text-xs font-medium">
                 {flat.rooms} rooms
               </p>
             </div>
             <div className="flex flex-col items-center ">
-              <Bath className="mb-1" />
+              <Bath className="mb-1 mb:w-8 mb:h-8 tl:w-10 tl:h-10" />
               <p className="text-formTextColor font-Montserrat text-xs font-medium">
                 {flat.bath} bath
               </p>
