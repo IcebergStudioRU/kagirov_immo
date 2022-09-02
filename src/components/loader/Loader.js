@@ -2,15 +2,23 @@ import React, { useContext } from "react";
 import { ContextGlobal } from "../../context/GlobalContextComponent";
 import { ReactComponent as Logo } from "../../assets/loader/svg/logo-loader.svg";
 import { motion } from "framer-motion";
+import { getText } from "../../utils/firebase";
 
 const Loader = () => {
-  const { setLoader, language, setLanguage, loaded } =
+  const { setLoader, language, setLanguage, loaded, setText, text } =
     useContext(ContextGlobal);
+
+  // const changeLanguage = (language) => {
+  //   setLanguage(language);
+  //   getText(language).then((response) => {
+  //     setText({...response})
+  //   })
+  // };
+
   return (
     <div className="bg-slate-900 h-screen">
       <div className="max-w-mobileContainer mx-auto px-5 pt-20 pb-8 ">
         <motion.div
-          // initial={{ opacity: 0, y: 200, scale: 2 }}
           animate={{
             opacity: [0, 1, 1],
             y: [200, 200, 0],
@@ -72,7 +80,7 @@ const Loader = () => {
           </motion.li>
         </motion.ul>
 
-        {language && loaded && (
+        {language && loaded && text && (
           <motion.div
             initial={{ y: -20 }}
             animate={{ y: 0 }}
@@ -82,7 +90,7 @@ const Loader = () => {
               onClick={() => setLoader(false)}
               className="p-2 bg-screenBorderBottom rounded-lg text-white"
             >
-              Перейти на сайт
+              {text.loader}
             </button>
           </motion.div>
         )}

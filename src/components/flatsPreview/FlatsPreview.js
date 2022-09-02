@@ -11,7 +11,7 @@ import { ReactComponent as ViewAll } from "../../assets/flatsPreview/svg/viewAll
 
 const FlatsPreview = () => {
   const [slice, setSlice] = useState(3);
-  const {flats} = useContext(ContextGlobal)
+  const {flats, text} = useContext(ContextGlobal)
 
   const changeSlice = () => {
     setSlice((prev) => {
@@ -31,7 +31,7 @@ const FlatsPreview = () => {
           onClick={changeSlice}
           id="Review"
         >
-          View All
+          {text.flatsPreview.viewAll}
           <ViewAll />
         </a>
       );
@@ -43,7 +43,7 @@ const FlatsPreview = () => {
         id="Review"
       >
         <ViewAll className="rotate-180" />
-        Hide
+        {text.flatsPreview.hide}
       </a>
     );
   };
@@ -102,7 +102,7 @@ const FlatsPreview = () => {
                           to={`/flat/${flat.id}`}
                           className="seeMoreLink"
                         >
-                          See more
+                          {text.flatsPreview.seeMore}
                         </Link>
                       </div>
                     </div>

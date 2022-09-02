@@ -14,7 +14,7 @@ const firebaseConfig = {
   storageBucket: "kagirovimmo.appspot.com",
   messagingSenderId: "525629029893",
   appId: "1:525629029893:web:abb1667f279d2da04be66c",
-  measurementId: "G-YD8PH26496"
+  measurementId: "G-YD8PH26496",
 };
 
 initializeApp(firebaseConfig);
@@ -39,4 +39,9 @@ export const getReviews = () => {
   return getDocs(reviewsCol).then((response) =>
     response.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
   );
+};
+
+export const getText = (language) => {
+  const textRef = doc(db, "text", language);
+  return getDoc(textRef).then((response) => response.data());
 };

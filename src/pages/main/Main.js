@@ -14,34 +14,35 @@ import { motion } from "framer-motion";
 import Loader2 from "../../components/loader2/Loader2.js";
 
 const Main = () => {
-  const { loader, loader2 } = useContext(ContextGlobal);
+  const { loader, loader2, text } = useContext(ContextGlobal);
 
   if (loader2) {
     return <Loader2 />;
   }
 
   if (loader) {
-    return <Loader exit={{ opacity: 0 }} />;
+    return <Loader />;
   }
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-    >
-      <MobileMenu />
-      <Screen>
-        <Header />
-      </Screen>
-      <AboutMe />
-      <FlatsPreview />
-      <Review />
-      <Form />
-      <WhyUs />
-      <Footer />
-    </motion.div>
-  );
+  if (text) {
+    return (
+      <motion.div
+        initial={{ opacity: 0.5 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
+        <MobileMenu />
+        <Screen>
+          <Header />
+        </Screen>
+        <AboutMe />
+        <FlatsPreview />
+        <Review />
+        <Form />
+        <WhyUs />
+        <Footer />
+      </motion.div>
+    );
+  }
 };
 
 export default Main;

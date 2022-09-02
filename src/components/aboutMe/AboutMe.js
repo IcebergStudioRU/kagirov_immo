@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Zelimhan from "../../assets/aboutMe/images/zelimkhan.png"
+import { ContextGlobal } from '../../context/GlobalContextComponent';
+
 const AboutMe = () => {
+    const { text } = useContext(ContextGlobal);
     return (
         <div className="bg-aboutMeBg w-1/1">
             <div className='relative'>
@@ -11,9 +14,8 @@ const AboutMe = () => {
             </div>
             <div>
                 <div className='p-4 flex flex-col items-center  '> 
-                    <h1 className='text-white mb-6 mb:text-2xl tl:text-3xl font-Montserrat'>About Me</h1>
-                    <p className='text-center text-white font-Montserrat mb-4 mb:text-base tl:text-lg'>Lorem ipsum dolor sit amet, consectetur<br/> adipiscing elit. Suspendisse varius enim in eros<br/> elementum tristique. </p>
-                    <p className='text-center text-white font-Montserrat mb:text-base tl:text-lg'>Duis cursus, mi quis viverra ornare, eros dolor<br/> interdum nulla, ut commodo diam libero vitae<br/> erat. Aenean faucibus nibh et justo cursus id<br/> rutrum lorem imperdiet</p>
+                    <h1 className='text-white mb-6 mb:text-2xl tl:text-3xl font-Montserrat'>{text.aboutMe.title}</h1>
+                    <p className='text-center text-white font-Montserrat mb:text-base tl:text-lg'>{text.aboutMe.text}</p>
                 </div>
             </div>
         </div>

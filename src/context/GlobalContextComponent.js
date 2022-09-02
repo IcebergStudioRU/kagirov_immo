@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { getFlats, getReviews } from "../utils/firebase";
+import { getFlats, getReviews, getText } from "../utils/firebase";
 
 export const ContextGlobal = createContext();
 const getViewPort = () => {
@@ -17,13 +17,19 @@ const GlobalContextComponent = ({ children }) => {
   const [flats, setFlats] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [loader, setLoader] = useState(false);
-  const [loader2, setLoader2] = useState(false)
+  const [loader2, setLoader2] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [language, setLanguage] = useState(defaultLanguageChooser());
+  const [text, setText] = useState(null);
   const [viewPort, setViewPort] = useState(getViewPort());
 
   useEffect(() => {
     localStorage.setItem("language", JSON.stringify(language));
+    if (language) {
+      getText(language).then((response) => {
+        setText({ ...response });
+      });
+    }
   }, [language]);
 
   useEffect(() => {
@@ -38,7 +44,7 @@ const GlobalContextComponent = ({ children }) => {
     if (!language) {
       return setLoader(true);
     } else {
-      setLoader2(true)
+      setLoader2(true);
     }
   }, []);
 
@@ -47,7 +53,7 @@ const GlobalContextComponent = ({ children }) => {
     const flats = getFlats().then((response) => setFlats([...response]));
     Promise.all([reviews, flats]).then(() => {
       setLoaded(true);
-      setLoader2(false)
+      setLoader2(false);
     });
   }, []);
 
@@ -65,7 +71,9 @@ const GlobalContextComponent = ({ children }) => {
         loaded,
         viewPort,
         loader2,
-        setLoader2
+        setLoader2,
+        text,
+        setText,
       }}
     >
       {children}
