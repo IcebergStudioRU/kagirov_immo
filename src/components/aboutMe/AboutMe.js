@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import Zelimhan from "../../assets/aboutMe/images/Zelimkhan.png"
+import Zelimhan from "../../assets/aboutMe/images/zelimkhan.png"
 import { ContextGlobal } from '../../context/GlobalContextComponent';
 
 const AboutMe = () => {

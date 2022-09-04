@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ContextGlobal } from "../../context/GlobalContextComponent";
-import bgVideoMP4 from "../../assets/screen/videos/bgVideo.MP4"
+import bgVideoMP4 from "../../assets/screen/videos/bgVideo.mp4"
 import bgVideoWeb from "../../assets/screen/videos/bgVideo.webm"
 const Screen = ({ children }) => {
   const { text } = useContext(ContextGlobal);
