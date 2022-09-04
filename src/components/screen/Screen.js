@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ContextGlobal } from "../../context/GlobalContextComponent";
-import bgVideoMP4 from "../../assets/screen/videos/bgVideo.mp4"
+import bgVideoMP4 from "../../assets/screen/videos/bgVideo.MP4"
 import bgVideoWeb from "../../assets/screen/videos/bgVideo.webm"
 const Screen = ({ children }) => {
   const { text } = useContext(ContextGlobal);
@@ -33,7 +33,7 @@ const Screen = ({ children }) => {
       // </div>
       <div className="relative">
         <div>{children}</div>
-        <video autoPlay muted loop className="h-screen object-cover">
+        <video autoPlay muted loop className="h-screen w-screen object-cover">
           <source src={bgVideoMP4} type="video/mp4"/>
           <source src={bgVideoWeb} type="video/webm"/>
         </video>
