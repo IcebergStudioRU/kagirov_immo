@@ -10,10 +10,9 @@
   top: 0;
   left: 0;
   z-index: 12;
-  
 }
 .mobileMenu_closed {
-  transform: translateY(-100%);
+  transform: translateY(-120%);
   transition: 0.5s;
   position: fixed;
   height: 100vh;

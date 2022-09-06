@@ -15,7 +15,7 @@ const MobileMenu = () => {
   return (
     <div className={mobileMenu ? "mobileMenu_opened" : "mobileMenu_closed"}>
       <div className="mb:max-w-mobileContainer tl:max-w-tabletContainer mx-auto mb:p-5 tl:p-5">
-        <div className="hamMobMenu flex flex-col items-end mb:mb-28 tl:mb-40">
+        <div className="hamMobMenu flex flex-col items-end mb:mb-28 tl:mb-14">
           <HamBtn />
         </div>
         <div className="flex flex-col items-center">
@@ -45,7 +45,7 @@ const MobileMenu = () => {
             href="#Review"
             onClick={closeMobileMenu}
           >
-            Review
+            Reviews
           </a>
           <Link
             to="/contacts"

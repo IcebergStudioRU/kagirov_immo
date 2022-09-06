@@ -19,14 +19,6 @@ const Quotes = () => {
     }
     setSliderContainerPx(val)
   }, [viewPort])
-  // let val = 0
-  // if (viewPort === "mobile") {
-  //   val = -300
-  // } else if (viewPort === "tablet"){
-  //   val = -400
-  // } else {
-  //   val = -600
-  // }
   return (
     <div className="bg-QuotesBg mb:h-350 tl:h-493">
       <div className="bg-reviewBg bg-bottom bg-no-repeat mb:h-350 tl:h-493">

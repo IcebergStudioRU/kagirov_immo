@@ -9,18 +9,7 @@ module.exports = {
       zIndex: {
         "-1": "-1",
       },
-      screens: {
-        tablet: "640px",
-        // => @media (min-width: 640px) { ... }
-
-        laptop: "1024px",
-        // => @media (min-width: 1024px) { ... }
-
-        desktop: "1200px",
-        // => @media (min-width: 1280px) { ... }
-      },
       colors: {
-        
         headerBg: "rgba(32, 39, 48, 0.7);",
 
         aboutMeBg: "#202730",
@@ -54,19 +43,15 @@ module.exports = {
         footerCoating: "rgba(255, 255, 255, 0.95)",
 
         contactsColor: "#ECE7E4",
-
       },
       maxWidth: {
-
         mobileContainer: "480px",
 
         tabletContainer: "768px",
 
         desktopContainer: "1200px",
-
       },
       height: {
-
         21: "21px",
 
         27: "27px",
@@ -76,7 +61,7 @@ module.exports = {
         34: "34px",
 
         46: "46px",
-        
+
         40: "40px",
 
         52: "52px",
@@ -101,6 +86,8 @@ module.exports = {
 
         310: "310px",
 
+        320: "320px",
+
         321: "321px",
 
         350: "350px",
@@ -114,6 +101,8 @@ module.exports = {
         412: "412px",
 
         420: "420px",
+
+        440: "440px",
 
         450: "450px",
 
@@ -142,12 +131,10 @@ module.exports = {
         834: "834px",
 
         "100%": "100%",
-
       },
       width: {
-
         21: "21px",
-        
+
         34: "34px",
 
         50: "50px",
@@ -172,6 +159,8 @@ module.exports = {
 
         320: "320px",
 
+        330: "330px",
+
         360: "360px",
 
         380: "380px",
@@ -181,37 +170,53 @@ module.exports = {
         424: "424px",
 
         450: "450px",
-        
+
+        464: "464px",
+
+        452: "452px",
+
         480: "480px",
+
+        640: "640px",
+
+        730: "730px",
+
+        768: "768px",
+
+        1070: "1070px",
+
+        1160: "1160px",
+
+        1200: "1200px",
 
         "60%": "60%",
 
         "100%": "100%",
-
       },
       backgroundImage: {
-
         screenImage: "url('../src/assets/screen/images/screen-image.jpg')",
 
         aboutMeImage: "url('../src/assets/aboutMe/svg/svg-stripes.svg')",
-        
-        mobileMenuBg:"url('../src/components/mobileMenu/images/mobile-menu_bg.jpg')",
+
+        mobileMenuBg:
+          "url('../src/components/mobileMenu/images/mobile-menu_bg.jpg')",
 
         reviewBg: "url('../src/assets/review/svg/svg-stripes.svg')",
 
         contactsBg: "url('../src/assets/contacts/images/contactsBg.jpg')",
 
         formImage: "url('../src/assets/form/images/formBg.png')",
-        
-        whyUsImage: "url('../src/assets/whyUs/images/WhyUsBg.jpg')", 
 
-        footerBg: "url(../src/assets/footer/images/footerBg.jpg)"
+        whyUsImage: "url('../src/assets/whyUs/images/WhyUsBg.jpg')",
+
+        footerBg: "url(../src/assets/footer/images/footerBg.jpg)",
       },
       spacing: {
+        m160: "-160px",
 
-        'm160': "-160px",
+        m320: "-320px",
 
-        'm320': "-320px",
+        240: "240px",
 
         245: "245px",
 
@@ -219,24 +224,26 @@ module.exports = {
 
         297: "297px",
 
+        300: "300px",
+
+        330: "330px",
+
+        360: "360px",
+
         361: "361px",
 
         424: "424px",
-
       },
       boxShadow: {
-
-        numShadow: "2px 0 #3A4D5A, -2px 0 #3A4D5A, 0 2px #3A4D5A, 0 -2px #3A4D5A, 1px 1px #3A4D5A, -1px -1px #3A4D5A, 1px -1px #3A4D5A, -1px 1px #3A4D5A;",
-
+        numShadow:
+          "2px 0 #3A4D5A, -2px 0 #3A4D5A, 0 2px #3A4D5A, 0 -2px #3A4D5A, 1px 1px #3A4D5A, -1px -1px #3A4D5A, 1px -1px #3A4D5A, -1px 1px #3A4D5A;",
       },
       screens: {
+        mb: "0",
 
-        'mb': '0',
-  
-        'tl': '768px',
-  
-        'dt': '1200px',
+        tl: "768px",
 
+        dt: "1200px",
       },
     },
   },
