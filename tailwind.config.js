@@ -212,6 +212,8 @@ module.exports = {
         footerBg: "url(../src/assets/footer/images/footerBg.jpg)",
       },
       spacing: {
+        margin85: "85px",
+
         m160: "-160px",
 
         m320: "-320px",
