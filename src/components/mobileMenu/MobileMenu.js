@@ -1,17 +1,19 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import HamBtn from "../hamBtn/HamBtn";
 import { Link } from "react-router-dom";
 import "./MobileMenu.css";
 import { ContextGlobal } from "../../context/GlobalContextComponent";
+import { ReactComponent as LanguageChange } from "../../assets/multiComponents/svg/languageChange.svg";
 
 const MobileMenu = () => {
-  const { mobileMenu, setMobileMenu, setLoader, setLanguage } = useContext(ContextGlobal);
-  
+  const { mobileMenu, setMobileMenu, setLoader, setLanguage, language } =
+    useContext(ContextGlobal);
+
   const closeMobileMenu = () => {
-    setMobileMenu(false)
-    document.querySelector("body").style.overflow = "auto"
-  }
-  
+    setMobileMenu(false);
+    document.querySelector("body").style.overflow = "auto";
+  };
+
   return (
     <div className={mobileMenu ? "mobileMenu_opened" : "mobileMenu_closed"}>
       <div className="mb:max-w-mobileContainer tl:max-w-tabletContainer mx-auto mb:p-5 tl:p-5">
@@ -54,12 +56,23 @@ const MobileMenu = () => {
           >
             Contacts
           </Link>
+          <div
+            onClick={() => {
+              setLanguage("");
+              setLoader(true);
+              setMobileMenu(false);
+            }}
+            className="stroke-white mb:w-20 mb:h-16 tl:w-24 tl:h-20 flex items-center"
+          >
+            <LanguageChange />
+            <div className="mb:text-3xl text-white">{language}</div>
+          </div>
         </div>
-        <button onClick={() => {
+        {/* <button onClick={() => {
           setLanguage("")
           setLoader(true)
           setMobileMenu(false)
-        }}>Выбрать язык | Choose the language | Sprache wählen</button>
+        }}>Выбрать язык | Choose the language | Sprache wählen</button> */}
       </div>
     </div>
   );

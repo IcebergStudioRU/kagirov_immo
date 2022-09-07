@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { ReactComponent as Logo } from "../../assets/header/svg/logo-kagirov-immo.svg";
 import { ContextGlobal } from "../../context/GlobalContextComponent";
+import { ReactComponent as LanguageChange } from "../../assets/multiComponents/svg/languageChange.svg";
 
 const Header = () => {
-  const { mobileMenu } = useContext(ContextGlobal);
+  const { mobileMenu, setLanguage, language, setLoader,  } = useContext(ContextGlobal);
 
   return (
     // <div className={mobileMenu ? "headerFixed" : "headerDefault"}>
@@ -37,10 +38,20 @@ const Header = () => {
               Reviews
             </a>
           </li>
-          <li>
+          <li className="mr-7">
             <Link className="font-normal text-2xl text-white" to="/contacts">
               Contacts
             </Link>
+          </li>
+          <li
+            onClick={() => {
+              setLanguage("");
+              setLoader(true);
+            }}
+            className="stroke-white w-16 flex items-center"
+          >
+            <LanguageChange />
+            <div className="mb:text-2xl text-white">{language}</div>
           </li>
         </ul>
         <div className="dt:hidden">
