@@ -19,8 +19,7 @@
   font-weight: 600;
   font-size: 20px;
   text-align: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 0 16px 0;
 }
 
 .flatsPreview_bullet {
@@ -57,8 +56,7 @@
     font-size: 24px;
     line-height: 32px;
     text-align: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding: 24px 0 24px 0;
   }
   .flatsPreview_bullet {
     width: 14px;
@@ -91,5 +89,19 @@
     font-size: 24px;
     text-align: center;
     padding: 25px 0 25px 0;
+  }
+    .flatsPreview_bullet {
+    width: 18px;
+    height: 18px;
+  }
+  .flatsPreview_bullet:not(:last-child) {
+    margin-right: 15px;
+  }
+  .flatsPreview_active-bullet {
+    width: 24px;
+    height: 24px;
+  }
+  .flatsPreview_active-bullet:not(:last-child) {
+    margin-right: 15px;
   }
 }

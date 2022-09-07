@@ -7,16 +7,27 @@ import { ContextGlobal } from "../../context/GlobalContextComponent";
 import { ReactComponent as Bed } from "../../assets/flatsPreview/svg/bed.svg";
 import { ReactComponent as Door } from "../../assets/flatsPreview/svg/door.svg";
 import { ReactComponent as Bath } from "../../assets/flatsPreview/svg/bath.svg";
+import { ReactComponent as ArrowLeft } from "../../assets/flatsPreview/svg/arrowLeft.svg";
+import { ReactComponent as ArrowRight } from "../../assets/flatsPreview/svg/arrowRight.svg";
 import { ReactComponent as ViewAll } from "../../assets/flatsPreview/svg/viewAllicon.svg";
 import { useSwiperTouch } from "../../hooks/Swiper";
 
 const FlatsPreview = () => {
   const { flats, text, viewPort } = useContext(ContextGlobal);
-  const [seeMore, setSeeMore] = useState(true);
+
   const [activeImagesNumber, setActiveIMagesNumber] = useState(0);
-  const [flatNumber, touchStart, touchMove, moveFlat, changeFlatNumber] =
-    useSwiperTouch(flats.length - activeImagesNumber);
+  const [
+    flatNumber,
+    touchStart,
+    touchMove,
+    moveFlat,
+    changeFlatNumber,
+    changeObjectRight,
+    changeObjectLeft,
+  ] = useSwiperTouch(flats.length - activeImagesNumber);
   const [sliderContainerPx, setSliderContainerPx] = useState(0);
+  const [seeMore, setSeeMore] = useState(false);
+  const [hover, setHover] = useState(false);
 
   useEffect(() => {
     let px;
@@ -28,7 +39,7 @@ const FlatsPreview = () => {
       px = -340;
       number = 1;
     } else {
-      px = -400;
+      px = -370;
       number = 2;
     }
     setSliderContainerPx(px);
@@ -67,8 +78,14 @@ const FlatsPreview = () => {
           Current Property
         </h2>
         {seeMore === false && (
-          <>
-            <div className="relative overflow-hidden mb:w-240 mb:h-320 mb:mb-3 tl:w-640 tl:h-400 tl:mb-5 dt:w-1070 dt:h-440">
+          <div className="relative">
+            <div
+              onClick={changeObjectLeft}
+              className="absolute w-12 h-12 -left-14 top-48 mb:hidden dt:block"
+            >
+              <ArrowLeft />
+            </div>
+            <div className="relative overflow-hidden mb:w-240 mb:h-320 mb:mb-3 tl:w-640 tl:h-400 tl:mb-5 dt:w-1070 dt:h-440 dt:mb-8">
               <ul
                 onTouchStart={(e) => touchStart(e)}
                 onTouchMove={(e) => touchMove(e)}
@@ -91,6 +108,7 @@ const FlatsPreview = () => {
                         alt="flat1"
                         className="w-100% h-100% object-cover"
                       />
+
                       <div className="overlay absolute bg-flatsAddressBg w-100% h-100% left-0 mb:top-240 tl:top-300 dt:top-330">
                         <div className="mb:pt-6 tl:pt-8 dt:pt-9 mb-10">
                           <p className="text-white font-Montserrat text-center mb:text-2xl tl:text-3xl dt:text-4xl  ">
@@ -100,35 +118,31 @@ const FlatsPreview = () => {
                         <p className="text-white font-Montserrat text-center mb:text-xl mb:mb-6 tl:text-2xl dt:text-3xl tl:mb-12">
                           {flat.price}$
                         </p>
-                        <div className="flex flex-col justify-end ">
-                          <div className="flex justify-center">
-                            <div className="flex flex-col items-center mb:mr-4 tl:mr-6 dt:mr-8">
-                              <Bed className="mb-1 mb:w-8 mb:h-8 tl:w-12 tl:h-12 dt:w-16 dt:h-16 " />
-                              <p className="text-white font-Montserrat font-medium mb:text-xs tl:text-base dt:text-xl">
-                                {flat.bed} bed
-                              </p>
-                            </div>
-                            <div className="flex flex-col items-center mb:mr-4 tl:mr-6 dt:mr-8">
-                              <Door className="mb-1 mb:w-8 mb:h-8 tl:w-12 tl:h-12 dt:w-16 dt:h-16" />
-                              <p className="text-white font-Montserrat font-medium mb:text-xs tl:text-base dt:text-xl">
-                                {flat.rooms} rooms
-                              </p>
-                            </div>
-                            <div className="flex flex-col items-center">
-                              <Bath className="mb-1 mb:w-8 mb:h-8 tl:w-12 tl:h-12 dt:w-16 dt:h-16" />
-                              <p className="text-white font-Montserrat font-medium mb:text-xs tl:text-base dt:text-xl">
-                                {flat.bath} bath
-                              </p>
-                            </div>
+
+                        <div className="flex justify-center">
+                          <div className="flex flex-col items-center mb:mr-4 tl:mr-6 dt:mr-8">
+                            <Bed className="mb-1 mb:w-8 mb:h-8 tl:w-12 tl:h-12 dt:w-16 dt:h-16 " />
+                            <p className="text-white font-Montserrat font-medium mb:text-xs tl:text-base dt:text-xl">
+                              {flat.bed} bed
+                            </p>
                           </div>
-                          <div className="absolute bottom-0 flex justify-center items-center w-full ">
-                            <Link
-                              to={`/flat/${flat.id}`}
-                              className="seeMoreLink"
-                            >
-                              {text.flatsPreview.seeMore}
-                            </Link>
+                          <div className="flex flex-col items-center mb:mr-4 tl:mr-6 dt:mr-8">
+                            <Door className="mb-1 mb:w-8 mb:h-8 tl:w-12 tl:h-12 dt:w-16 dt:h-16" />
+                            <p className="text-white font-Montserrat font-medium mb:text-xs tl:text-base dt:text-xl">
+                              {flat.rooms} rooms
+                            </p>
                           </div>
+                          <div className="flex flex-col items-center">
+                            <Bath className="mb-1 mb:w-8 mb:h-8 tl:w-12 tl:h-12 dt:w-16 dt:h-16" />
+                            <p className="text-white font-Montserrat font-medium mb:text-xs tl:text-base dt:text-xl">
+                              {flat.bath} bath
+                            </p>
+                          </div>
+                        </div>
+                        <div className="absolute bottom-0 flex justify-center items-center w-full ">
+                          <Link to={`/flat/${flat.id}`} className="seeMoreLink">
+                            {text.flatsPreview.seeMore}
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -136,7 +150,8 @@ const FlatsPreview = () => {
                 ))}
               </ul>
             </div>
-            <div className="flex justify-center items-center dt:hidden">
+
+            <div className="flex justify-center items-center">
               {flats
                 .filter(
                   (item, index, array) =>
@@ -155,7 +170,13 @@ const FlatsPreview = () => {
                   ></div>
                 ))}
             </div>
-          </>
+            <div
+              onClick={changeObjectRight}
+              className="absolute w-12 h-12 -right-14 top-48 mb:hidden dt:block"
+            >
+              <ArrowRight />
+            </div>
+          </div>
         )}
 
         {seeMore === true && (

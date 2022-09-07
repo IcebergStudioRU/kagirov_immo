@@ -49,5 +49,33 @@ export const useSwiperTouch = (length) => {
     setImageNumber(imageNumber);
   };
 
-  return [imageNumber, touchStart, touchMove, moveImage, changeImageNumber];
+  const changeObjectRight = () => {
+    if (length - 1 > imageNumber) {
+      setImageNumber((prev) => {
+        return prev + 1;
+      });
+    } else {
+      setImageNumber(0);
+    }
+  };
+
+  const changeObjectLeft = () => {
+    if (0 < imageNumber) {
+      setImageNumber((prev) => {
+        return prev - 1;
+      });
+    } else {
+      setImageNumber(length - 1);
+    }
+  };
+
+  return [
+    imageNumber,
+    touchStart,
+    touchMove,
+    moveImage,
+    changeImageNumber,
+    changeObjectRight,
+    changeObjectLeft,
+  ];
 };
