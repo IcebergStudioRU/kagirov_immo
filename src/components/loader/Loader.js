@@ -5,9 +5,12 @@ import { motion } from "framer-motion";
 import { getText } from "../../utils/firebase";
 
 const Loader = () => {
-  const { setLoader, language, setLanguage, loaded, setText, text } =
+  const { setLoader, language, setLanguage, loaded, setText, text, mobileMenu } =
     useContext(ContextGlobal);
-
+  const body = document.querySelector("body");
+  const gg = () => {
+      body.style.overflow = `scroll`;
+  }
   // const changeLanguage = (language) => {
   //   setLanguage(language);
   //   getText(language).then((response) => {
@@ -86,12 +89,14 @@ const Loader = () => {
             animate={{ y: 0 }}
             className="flex justify-center"
           >
+          <div onClick={gg}>
             <button
               onClick={() => setLoader(false)}
               className="p-2 bg-screenBorderBottom rounded-lg text-white"
             >
               {text.loader}
             </button>
+          </div>
           </motion.div>
         )}
 

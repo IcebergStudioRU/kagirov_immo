@@ -53,7 +53,7 @@ const Quotes = () => {
                 }}
               >
                 {reviews.map((review, index) => (
-                  <li className="flex flex-col items-center mb:w-300 mb:h-320 tl:w-500 tl:h-400 dt:w-700 dt:h-500">
+                  <li className="flex flex-col items-center mb:w-320 mb:h-300 tl:w-500 tl:h-400 dt:w-700 dt:h-500">
                     <img
                       src={review.image}
                       alt="dsomds"
